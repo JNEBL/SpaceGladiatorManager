@@ -10,6 +10,7 @@ public class Human extends Race {
     public Human(){
         super(new Value(1,"Base Value"),new Value(1,"Base Value"),
                 new Value(1,"Base Value"),new Value(1,"Base Value"),
-                new Value(1,"Base Value"),new Value(1,"Base Value"));
+                new Value(1,"Base Value"),new Value(1,"Base Value"),
+                new Value(1,"Base Value"));
     }
 }

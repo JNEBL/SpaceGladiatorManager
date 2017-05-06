@@ -10,6 +10,7 @@ public class Vampire extends Race {
     public Vampire(){
         super(new Value(1,"Base Value"),new Value(1,"Base Value"),
                 new Value(1,"Base Value"),new Value(1,"Base Value"),
-                new Value(1,"Base Value"),new Value(1,"Base Value"));
+                new Value(1,"Base Value"),new Value(1,"Base Value"),
+                new Value(1,"Base Value"));
     }
 }

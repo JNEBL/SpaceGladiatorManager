@@ -21,28 +21,56 @@ public class Gladiator {
     private ArrayList<Value> toughnessComp = new ArrayList<>();
     public Gladiator(Race race){
         setRace(race);
+        statCalculator();
     }
 
     public ArrayList<Value> getAccelerationComp() {
         return accelerationComp;
     }
+    public void addAccelerationCompValue(Value value){
+        accelerationComp.add(value);
+    }
+
     public ArrayList<Value> getAgilityComp() {
         return agilityComp;
     }
+    public void addAgilityCompValue(Value value){
+        accelerationComp.add(value);
+    }
+
     public ArrayList<Value> getBalanceComp() {
         return balanceComp;
     }
+    public void addBalanceCompValue(Value value){
+        accelerationComp.add(value);
+    }
+
     public ArrayList<Value> getDexterityComp() {
         return dexterityComp;
     }
+    public void addDexterityCompValue(Value value){
+        accelerationComp.add(value);
+    }
+
     public ArrayList<Value> getStaminaComp() {
         return staminaComp;
     }
+    public void addStaminaCompValue(Value value){
+        accelerationComp.add(value);
+    }
+
     public ArrayList<Value> getStrengthComp() {
         return strengthComp;
     }
+    public void addStrengthCompValue(Value value){
+        accelerationComp.add(value);
+    }
+
     public ArrayList<Value> getToughnessComp() {
         return toughnessComp;
+    }
+    public void addToughnessCompValue(Value value){
+        accelerationComp.add(value);
     }
 
     public int getAcceleration() {
@@ -102,9 +130,32 @@ public class Gladiator {
         if (allReadyExistantRaceChecker()){
             if (arrayListValueIndexFinder(accelerationComp,"Base Value") != -1){
                 accelerationComp.remove(arrayListValueIndexFinder(accelerationComp,"Base Value"));
-                
+                accelerationComp.add(race.getAcceleration());
             }
-
+            if (arrayListValueIndexFinder(agilityComp,"Base Value") != -1){
+                agilityComp.remove(arrayListValueIndexFinder(agilityComp,"Base Value"));
+                agilityComp.add(race.getAcceleration());
+            }
+            if (arrayListValueIndexFinder(balanceComp,"Base Value") != -1){
+                balanceComp.remove(arrayListValueIndexFinder(balanceComp,"Base Value"));
+                balanceComp.add(race.getAcceleration());
+            }
+            if (arrayListValueIndexFinder(dexterityComp,"Base Value") != -1){
+                dexterityComp.remove(arrayListValueIndexFinder(dexterityComp,"Base Value"));
+                dexterityComp.add(race.getAcceleration());
+            }
+            if (arrayListValueIndexFinder(staminaComp,"Base Value") != -1){
+                staminaComp.remove(arrayListValueIndexFinder(staminaComp,"Base Value"));
+                staminaComp.add(race.getAcceleration());
+            }
+            if (arrayListValueIndexFinder(strengthComp,"Base Value") != -1){
+                strengthComp.remove(arrayListValueIndexFinder(strengthComp,"Base Value"));
+                strengthComp.add(race.getAcceleration());
+            }
+            if (arrayListValueIndexFinder(toughnessComp,"Base Value") != -1){
+                toughnessComp.remove(arrayListValueIndexFinder(toughnessComp,"Base Value"));
+                toughnessComp.add(race.getAcceleration());
+            }
         }
         else{
             accelerationComp.add(race.getAcceleration());
@@ -141,7 +192,42 @@ public class Gladiator {
         }
         return -1;
     }
-    private void statCalculator(){
 
+    private void statCalculator(){
+        int temp = 0;
+        for (int x = 0;x < accelerationComp.size();x++){
+            temp+=accelerationComp.get(x).getValue();
+        }
+        setAcceleration(temp);
+        temp = 0;
+        for (int x = 0;x < agilityComp.size();x++){
+            temp+=agilityComp.get(x).getValue();
+        }
+        setAgility(temp);
+        temp = 0;
+        for (int x = 0;x < balanceComp.size();x++){
+            temp+=balanceComp.get(x).getValue();
+        }
+        setBalance(temp);
+        temp = 0;
+        for (int x = 0;x < dexterityComp.size();x++){
+            temp+=dexterityComp.get(x).getValue();
+        }
+        setDexterity(temp);
+        temp = 0;
+        for (int x = 0;x < staminaComp.size();x++){
+            temp+=staminaComp.get(x).getValue();
+        }
+        setStamina(temp);
+        temp = 0;
+        for (int x = 0;x < strengthComp.size();x++){
+            temp+=strengthComp.get(x).getValue();
+        }
+        setStrength(temp);
+        temp = 0;
+        for (int x = 0;x < toughnessComp.size();x++){
+            temp+=toughnessComp.get(x).getValue();
+        }
+        setToughness(temp);
     }
 }
