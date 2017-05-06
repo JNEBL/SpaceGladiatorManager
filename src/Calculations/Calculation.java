@@ -25,4 +25,11 @@ public class Calculation {
         }
         return false;
     }
+    public static int arrayListGladiatorValueIndexFinder(ArrayList<Value> arrayList,String purpose){
+        for (int x = 0;x < arrayList.size();x++){
+            if (Calculation.valueChecker(arrayList.get(x),purpose))
+                return x;
+        }
+        return -1;
+    }
 }

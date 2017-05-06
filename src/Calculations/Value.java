@@ -14,6 +14,12 @@ public class Value {
     public int getValue() {
         return value;
     }
+    public void setValue(int value) {
+        this.value = value;
+    }
+    public void incrementValue(int value){
+        setValue(this.value + value);
+    }
 
     public String getPurpose() {
         return purpose;
