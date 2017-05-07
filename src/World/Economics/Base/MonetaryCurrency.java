@@ -3,10 +3,10 @@ package World.Economics.Base;
 /**
  * Created by jnebl on 5/6/2017.
  */
-public class Currency {
+public class MonetaryCurrency {
     private int amount,galacticStandardValue;
     private String currencyName;
-    public Currency(int amount,int galacticStandardValue,String currencyName){
+    public MonetaryCurrency(int amount, int galacticStandardValue, String currencyName){
         setAmount(amount);
         setGalacticStandardValue(galacticStandardValue);
         setCurrencyName(currencyName);
