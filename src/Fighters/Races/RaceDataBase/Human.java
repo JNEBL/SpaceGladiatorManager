@@ -8,9 +8,9 @@ import Fighters.Races.Base.Race;
  */
 public class Human extends Race {
     public Human(){
-        super(new Value(1,"Fighters.Base Value"),new Value(1,"Fighters.Base Value"),
-                new Value(1,"Fighters.Base Value"),new Value(1,"Fighters.Base Value"),
-                new Value(1,"Fighters.Base Value"),new Value(1,"Fighters.Base Value"),
-                new Value(1,"Fighters.Base Value"));
+        super(new Value(1,"Fighters.Gladiator.Base Value"),new Value(1,"Fighters.Gladiator.Base Value"),
+                new Value(1,"Fighters.Gladiator.Base Value"),new Value(1,"Fighters.Gladiator.Base Value"),
+                new Value(1,"Fighters.Gladiator.Base Value"),new Value(1,"Fighters.Gladiator.Base Value"),
+                new Value(1,"Fighters.Gladiator.Base Value"));
     }
 }

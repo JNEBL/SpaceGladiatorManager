@@ -1,7 +1,7 @@
-package Player.Ship.Ships.DataBaseGrabberShip;
+package Player.Ship.DataBaseGrabberShip;
 
-import Player.Ship.Ships.Base.Ship;
-import Player.Ship.Ships.ShipDataBase.A35VerdShip;
+import Player.Ship.Base.Ship;
+import Player.Ship.ShipDataBase.A35VerdShip;
 
 /**
  * Created by jnebl on 5/6/2017.

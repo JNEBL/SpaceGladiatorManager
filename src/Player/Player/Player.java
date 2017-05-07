@@ -1,12 +1,12 @@
 package Player.Player;
 
-import Fighters.Base.Gladiator;
-import Player.Ship.Ships.Base.Ship;
-import Player.Ship.Ships.DataBaseGrabberShip.ShipDataBase;
-import World.Economics.Base.MonetaryCurrency;
-import World.Economics.DataBaseCurrencyGrabber.CurrencyDataBase;
+        import Fighters.Gladiator.Base.Gladiator;
+        import Player.Ship.Base.Ship;
+        import Player.Ship.DataBaseGrabberShip.ShipDataBase;
+        import World.Economics.Base.MonetaryCurrency;
+        import World.Economics.DataBaseCurrencyGrabber.CurrencyDataBase;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
 /**
  * Created by jnebl on 5/6/2017.
@@ -32,9 +32,11 @@ public class Player {
         return gladiators;
     }
     public void addGladiator(Gladiator gladiator){
-        gladiators.add(gladiator);
+        if (ship.getMaxGladiators() > gladiators.size())
+            gladiators.add(gladiator);
     }
     public void removeGladiator(int index){
-        gladiators.remove(index);
+        if (index > -1)
+            gladiators.remove(index);
     }
 }
