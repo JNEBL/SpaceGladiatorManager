@@ -1,8 +1,8 @@
-package Races.DataBaseGrabberRaces;
+package Fighters.Races.DataBaseGrabberRaces;
 
-import Races.Base.Race;
-import Races.RaceDataBase.Human;
-import Races.RaceDataBase.Vampire;
+import Fighters.Races.Base.Race;
+import Fighters.Races.RaceDataBase.*;
+
 
 /**
  * Created by student5 on 5/5/17.

@@ -1,8 +1,8 @@
-package Base;
+package Fighters.Base;
 
 import Calculations.Calculation;
 import Calculations.Value;
-import Races.Base.Race;
+import Fighters.Races.Base.Race;
 
 import java.util.ArrayList;
 
@@ -135,44 +135,44 @@ public class Gladiator {
     private void setRace(Race race) {
         this.race = race;
         if (allReadyExistantRaceChecker()){
-            if (Calculation.arrayListGladiatorValueIndexFinder(accelerationComp,"Base Value") != -1){
-                accelerationComp.remove(Calculation.arrayListGladiatorValueIndexFinder(accelerationComp,"Base Value"));
+            if (Calculation.arrayListGladiatorValueIndexFinder(accelerationComp,"Fighters.Base Value") != -1){
+                accelerationComp.remove(Calculation.arrayListGladiatorValueIndexFinder(accelerationComp,"Fighters.Base Value"));
                 accelerationComp.add(race.getAcceleration());
             }
             else
                 accelerationComp.add(race.getAcceleration());
-            if (Calculation.arrayListGladiatorValueIndexFinder(agilityComp,"Base Value") != -1){
-                agilityComp.remove(Calculation.arrayListGladiatorValueIndexFinder(agilityComp,"Base Value"));
+            if (Calculation.arrayListGladiatorValueIndexFinder(agilityComp,"Fighters.Base Value") != -1){
+                agilityComp.remove(Calculation.arrayListGladiatorValueIndexFinder(agilityComp,"Fighters.Base Value"));
                 agilityComp.add(race.getAgility());
             }
             else
                 agilityComp.add(race.getAgility());
-            if (Calculation.arrayListGladiatorValueIndexFinder(balanceComp,"Base Value") != -1){
-                balanceComp.remove(Calculation.arrayListGladiatorValueIndexFinder(balanceComp,"Base Value"));
+            if (Calculation.arrayListGladiatorValueIndexFinder(balanceComp,"Fighters.Base Value") != -1){
+                balanceComp.remove(Calculation.arrayListGladiatorValueIndexFinder(balanceComp,"Fighters.Base Value"));
                 balanceComp.add(race.getBalance());
             }
             else
                 balanceComp.add(race.getBalance());
-            if (Calculation.arrayListGladiatorValueIndexFinder(dexterityComp,"Base Value") != -1){
-                dexterityComp.remove(Calculation.arrayListGladiatorValueIndexFinder(dexterityComp,"Base Value"));
+            if (Calculation.arrayListGladiatorValueIndexFinder(dexterityComp,"Fighters.Base Value") != -1){
+                dexterityComp.remove(Calculation.arrayListGladiatorValueIndexFinder(dexterityComp,"Fighters.Base Value"));
                 dexterityComp.add(race.getDexterity());
             }
             else
                 dexterityComp.add(race.getDexterity());
-            if (Calculation.arrayListGladiatorValueIndexFinder(staminaComp,"Base Value") != -1){
-                staminaComp.remove(Calculation.arrayListGladiatorValueIndexFinder(staminaComp,"Base Value"));
+            if (Calculation.arrayListGladiatorValueIndexFinder(staminaComp,"Fighters.Base Value") != -1){
+                staminaComp.remove(Calculation.arrayListGladiatorValueIndexFinder(staminaComp,"Fighters.Base Value"));
                 staminaComp.add(race.getStamina());
             }
             else
                 staminaComp.add(race.getStamina());
-            if (Calculation.arrayListGladiatorValueIndexFinder(strengthComp,"Base Value") != -1){
-                strengthComp.remove(Calculation.arrayListGladiatorValueIndexFinder(strengthComp,"Base Value"));
+            if (Calculation.arrayListGladiatorValueIndexFinder(strengthComp,"Fighters.Base Value") != -1){
+                strengthComp.remove(Calculation.arrayListGladiatorValueIndexFinder(strengthComp,"Fighters.Base Value"));
                 strengthComp.add(race.getStrength());
             }
             else
                 strengthComp.add(race.getStrength());
-            if (Calculation.arrayListGladiatorValueIndexFinder(toughnessComp,"Base Value") != -1){
-                toughnessComp.remove(Calculation.arrayListGladiatorValueIndexFinder(toughnessComp,"Base Value"));
+            if (Calculation.arrayListGladiatorValueIndexFinder(toughnessComp,"Fighters.Base Value") != -1){
+                toughnessComp.remove(Calculation.arrayListGladiatorValueIndexFinder(toughnessComp,"Fighters.Base Value"));
                 toughnessComp.add(race.getToughness());
             }
             else
@@ -190,19 +190,19 @@ public class Gladiator {
     }
 
     private boolean allReadyExistantRaceChecker(){
-        if (Calculation.valueCheckerArrayList(accelerationComp,"Base Value"))
+        if (Calculation.valueCheckerArrayList(accelerationComp,"Fighters.Base Value"))
             return true;
-        if (Calculation.valueCheckerArrayList(agilityComp,"Base Value"))
+        if (Calculation.valueCheckerArrayList(agilityComp,"Fighters.Base Value"))
             return true;
-        if (Calculation.valueCheckerArrayList(balanceComp,"Base Value"))
+        if (Calculation.valueCheckerArrayList(balanceComp,"Fighters.Base Value"))
             return true;
-        if (Calculation.valueCheckerArrayList(dexterityComp,"Base Value"))
+        if (Calculation.valueCheckerArrayList(dexterityComp,"Fighters.Base Value"))
             return true;
-        if (Calculation.valueCheckerArrayList(staminaComp,"Base Value"))
+        if (Calculation.valueCheckerArrayList(staminaComp,"Fighters.Base Value"))
             return true;
-        if (Calculation.valueCheckerArrayList(strengthComp,"Base Value"))
+        if (Calculation.valueCheckerArrayList(strengthComp,"Fighters.Base Value"))
             return true;
-        if (Calculation.valueCheckerArrayList(toughnessComp,"Base Value"))
+        if (Calculation.valueCheckerArrayList(toughnessComp,"Fighters.Base Value"))
             return true;
         return false;
     }
