@@ -8,10 +8,10 @@ import Fighters.Races.RaceDataBase.*;
  * Created by student5 on 5/5/17.
  */
 public class RaceDataBase {
-    public static Race getHumanCharacter(){
+    public static Race getHumanRace(){
         return new Human();
     }
-    public static Race getVampireCharacter(){
+    public static Race getVampireRace(){
         return new Vampire();
     }
 }

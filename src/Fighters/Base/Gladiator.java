@@ -207,7 +207,6 @@ public class Gladiator {
         return false;
     }
 
-
     private void statCalculator(){
         int temp = 0;
         for (int x = 0;x < accelerationComp.size();x++){

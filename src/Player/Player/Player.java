@@ -1,4 +1,6 @@
-package Player;
+package Player.Player;
+
+import Player.Ship.Ships.Base.Ship;
 
 import java.util.ArrayList;
 import java.util.Currency;
