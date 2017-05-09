@@ -16,6 +16,7 @@ public class Mouse implements MouseListener{
     public void mousePressed(MouseEvent mouseEvent){
         Window.xClick = mouseEvent.getX();
         Window.yClick = mouseEvent.getY();
+        Window.window.questionButtons();
     }
     public void mouseExited(MouseEvent mouseEvent){
 

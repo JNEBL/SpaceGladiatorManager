@@ -1,6 +1,8 @@
 package DevCheat;
 
 import Fighters.Gladiator.DataBaseGrabberGladiator.GladiatorDataBase;
+import GameFrameWork.Button;
+import GameFrameWork.Mouse;
 import GameFrameWork.Window;
 import Player.Player.Player;
 
@@ -14,5 +16,11 @@ public class DevRunner {
 //            player.addGladiator(GladiatorDataBase.getVampireCharacter());
 //        System.out.println(player.getGladiators());
         Window window = new Window();
+        window.addMouseListener(new Mouse());
+        window.buttons.add(new Button(10,40,250,100,"one"));
+        window.buttons.add(new Button(10,200,250,100,"two"));
+        window.buttons.add(new Button(10,400,250,100,"three"));
+        window.displayButtons();
+
     }
 }
