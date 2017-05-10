@@ -1,6 +1,8 @@
 package GameFrameWork;
 
 import Fighters.Gladiator.DataBaseGrabberGladiator.GladiatorDataBase;
+import Menus.*;
+import Menus.Menu;
 import Player.Player.Player;
 
 import javax.swing.*;
@@ -11,9 +13,9 @@ import java.util.ArrayList;
  * Created by student5 on 5/8/17.
  */
 public class Window extends JFrame{
-    static int xClick = 0,yClick = 0;
-    static Window window;
-    public ArrayList<Button> buttons = new ArrayList<>();
+    public static int xClick = 0,yClick = 0;
+    public static Window window;
+    public static Menu menu;
     public Window(){
         super("GenericGame");
         setSize(1280,720);
@@ -23,33 +25,9 @@ public class Window extends JFrame{
         window = this;
     }
 
-    public void displayButtons(){
-        getGraphics().setColor(Color.white);
-        getGraphics().fillRect(0,0,1280,720);
-        getGraphics().setColor(Color.black);
-        for (int scan = 0; scan < buttons.size(); scan++)
-            buttons.get(scan).displayButton();
-    }
-//    public void displayButtons(ArrayList<Button> buttons){
-//        for (int scan = 0; scan < buttons.size(); scan++)
-//            buttons.get(scan).displayButton();
-//    }
-    public void voidButtons(Button button){
-        for (int scan = 0;buttons.size() > scan; scan++){
-            if(buttons.get(scan) == button){
-                buttons.remove(scan);
-                scan--;
-            }
-        }
-    }
-    public void voidButtons(ArrayList<Button> buttons){
-        for(int scan = 0; scan < buttons.size(); scan++){
-            voidButtons(buttons.get(scan));
-        }
-    }
+
     public void questionButtons(){
-        for (int scan = 0; scan < buttons.size(); scan++)
-            buttons.get(scan).questionClicked();
+        menu.questionButtons();
     }
 
 
