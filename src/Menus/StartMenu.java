@@ -1,4 +1,4 @@
-package GameFrameWork;
+package Menus;
 
 
 import javax.swing.*;
