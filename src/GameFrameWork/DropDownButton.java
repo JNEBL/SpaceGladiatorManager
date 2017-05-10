@@ -38,6 +38,7 @@ public class DropDownButton extends Button {
 
     public void voidDrop(){
         Window.window.voidButtons(buttons);
+        Window.window.displayButtons();
         buttons = new ArrayList<>();
         open = false;
     }

@@ -20,16 +20,12 @@ public class Window extends JFrame{
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         paint(getGraphics());
-        play();
         window = this;
     }
-    public void play(){
-        Graphics g = getGraphics();
-        g.drawOval(5,5,300,300);
-    }
+
     public void displayButtons(){
         getGraphics().setColor(Color.white);
-        getGraphics().drawRect(0,0,1280,720);
+        getGraphics().fillRect(0,0,1280,720);
         getGraphics().setColor(Color.black);
         for (int scan = 0; scan < buttons.size(); scan++)
             buttons.get(scan).displayButton();
