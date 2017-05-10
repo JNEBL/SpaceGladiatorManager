@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Window extends JFrame{
     public static int xClick = 0,yClick = 0;
     public static Window window;
-    public static Menu menu;
+    public static Menu menu = new GameCreation();
     public Window(){
         super("GenericGame");
         setSize(1280,720);

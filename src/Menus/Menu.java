@@ -11,9 +11,8 @@ import java.util.ArrayList;
  * Created by citim on 5/10/2017.
  */
 public abstract class Menu {
-    ArrayList<Button> buttons = new ArrayList<>();
+    public ArrayList<Button> buttons = new ArrayList<>();
 
-    public abstract void display();
     public void displayButtons(){
         Window.window.getGraphics().setColor(Color.white);
         Window.window.getGraphics().fillRect(0,0,1280,720);

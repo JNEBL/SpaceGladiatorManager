@@ -31,14 +31,14 @@ public class DropDownButton extends Button {
             buttons.add(new Button(x, 2 * y + scan * (yDimension + 2), xDimesion, yDimension, buttonNames[scan]));
             //make window display this
         }
-            Window.window.buttons.addAll(buttons);
-            Window.window.displayButtons();
+            Window.menu.buttons.addAll(buttons);
+            Window.menu.displayButtons();
             open = true;
         }
 
     public void voidDrop(){
-        Window.window.voidButtons(buttons);
-        Window.window.displayButtons();
+        Window.menu.voidButtons(buttons);
+        Window.menu.displayButtons();
         buttons = new ArrayList<>();
         open = false;
     }
