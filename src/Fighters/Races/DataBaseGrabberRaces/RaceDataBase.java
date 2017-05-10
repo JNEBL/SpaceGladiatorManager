@@ -14,4 +14,10 @@ public class RaceDataBase {
     public static Race getVampireRace(){
         return new Vampire();
     }
+    public static Race getGeluShaalRace(){
+        return new GeluShaal();
+    }
+    public static Race getSerpereAgereRace(){
+        return new SerpereAgere();
+    }
 }
