@@ -31,9 +31,27 @@ public class Window extends JFrame{
         for (int scan = 0; scan < buttons.size(); scan++)
             buttons.get(scan).displayButton();
     }
+//    public void displayButtons(ArrayList<Button> buttons){
+//        for (int scan = 0; scan < buttons.size(); scan++)
+//            buttons.get(scan).displayButton();
+//    }
+    public void voidButtons(Button button){
+        for (int scan = 0;buttons.size() > scan; scan++){
+            if(buttons.get(scan) == button){
+                buttons.remove(scan);
+                scan--;
+            }
+        }
+    }
+    public void voidButtons(ArrayList<Button> buttons){
+        for(int scan = 0; scan < buttons.size(); scan++){
+            voidButtons(buttons.get(scan));
+        }
+    }
     public void questionButtons(){
         for (int scan = 0; scan < buttons.size(); scan++)
             if(buttons.get(scan).questionClicked()) System.out.println("YOU CLICKED A BUTTON!!!");
     }
+
 
 }
