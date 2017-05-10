@@ -20,10 +20,14 @@ public class Button {
         this.name = name;
     }
     public boolean questionClicked(){
-        return  ((Window.window.xClick > x &&
+        if  ((Window.window.xClick > x &&
                 Window.window.xClick < x+xDimesion )&&
                 (Window.window.yClick > y &&
-                Window.window.yClick < y+yDimension));
+                Window.window.yClick < y+yDimension)){
+            System.out.println("you clicked "+name);
+            return true;
+        }
+        return false;
     }
     public void displayButton(){
 

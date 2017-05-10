@@ -28,6 +28,9 @@ public class Window extends JFrame{
         g.drawOval(5,5,300,300);
     }
     public void displayButtons(){
+        getGraphics().setColor(Color.white);
+        getGraphics().drawRect(0,0,1280,720);
+        getGraphics().setColor(Color.black);
         for (int scan = 0; scan < buttons.size(); scan++)
             buttons.get(scan).displayButton();
     }
@@ -50,7 +53,7 @@ public class Window extends JFrame{
     }
     public void questionButtons(){
         for (int scan = 0; scan < buttons.size(); scan++)
-            if(buttons.get(scan).questionClicked()) System.out.println("YOU CLICKED A BUTTON!!!");
+            buttons.get(scan).questionClicked();
     }
 
 
