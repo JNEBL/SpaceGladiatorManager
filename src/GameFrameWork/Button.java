@@ -33,8 +33,10 @@ public class Button {
     public void displayButton(){
 
         Graphics g = Window.window.getGraphics();
+        g.setColor(Color.darkGray);
+        g.fillRect(x,y,xDimesion,yDimension);
         g.setColor(Color.gray);
-        g.fillRect(x+2,y+2,xDimesion-2, yDimension-2);
+        g.fillRect(x+2,y+2,xDimesion-4, yDimension-4);
         g.setColor(Color.black);
         g.drawString(name,x+5,y+yDimension/2);
     }

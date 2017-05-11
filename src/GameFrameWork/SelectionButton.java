@@ -14,8 +14,10 @@ public class SelectionButton extends Button{
     }
     public void displayButton(){
         Graphics g = Window.window.getGraphics();
+        g.setColor(Color.darkGray);
+        g.fillRect(x,y,xDimesion,yDimension);
         g.setColor(Color.gray);
-        g.fillRect(x,y,xDimesion, yDimension);
+        g.fillRect(x+2,y+2,xDimesion-4, yDimension-4);
         g.fillRect(x+9,y-115,80,110);
         g.setColor(Color.red);
         g.fillRect(x+22,y-70,50,50);
