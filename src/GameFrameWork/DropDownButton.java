@@ -28,7 +28,7 @@ public class DropDownButton extends Button {
     }
     public void displayDrop(){
         for(int scan = 0; scan < this.buttonNames.length; scan++) {
-            buttons.add(new Button(x, 2 * y + scan * (yDimension + 2), xDimesion, yDimension, buttonNames[scan]));
+            buttons.add(new Button(x,   y+((scan+1)*(yDimension + 2)), xDimesion, yDimension, buttonNames[scan]));
             //make window display this
         }
             Window.menu.buttons.addAll(buttons);

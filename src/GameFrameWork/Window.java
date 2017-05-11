@@ -25,10 +25,4 @@ public class Window extends JFrame{
         window = this;
     }
 
-
-    public void questionButtons(){
-        menu.questionButtons();
-    }
-
-
 }
