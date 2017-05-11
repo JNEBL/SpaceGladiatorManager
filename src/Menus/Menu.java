@@ -47,4 +47,5 @@ public abstract class Menu {
         for (int scan = 0; scan < buttons.size(); scan++)
             buttons.get(scan).questionClicked();
     }
+    public abstract void questionPressed();
 }

@@ -13,7 +13,7 @@ public class DropDownButton extends Button {
         super(x,y,xDimesion,yDimension,name);
         buttonNames = buttons;
     }
-    public boolean questionClicked(){
+    public void questionClicked(){
         if  ((Window.window.xClick > x &&
                 Window.window.xClick < x+xDimesion )&&
                 (Window.window.yClick > y &&
@@ -22,9 +22,9 @@ public class DropDownButton extends Button {
             displayDrop();
             else
                 voidDrop();
-            return true;
+            clicked = true;
         }
-        return false;
+        clicked = false;
     }
     public void displayDrop(){
         for(int scan = 0; scan < this.buttonNames.length; scan++) {

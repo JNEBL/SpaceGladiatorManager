@@ -12,6 +12,7 @@ import java.text.AttributedCharacterIterator;
 public class Button {
     int x,y, xDimesion, yDimension;
     String name;
+    boolean clicked = false;
     public Button(int x, int y, int xDimesion, int yDimension, String name){
         this.x = x;
         this.y = y;
@@ -20,15 +21,11 @@ public class Button {
         this.name = name;
     }
 
-    public boolean questionClicked(){
-        if  ((Window.window.xClick > x &&
-                Window.window.xClick < x+xDimesion )&&
+    public void questionClicked() {
+        clicked = ((Window.window.xClick > x &&
+                Window.window.xClick < x + xDimesion) &&
                 (Window.window.yClick > y &&
-                Window.window.yClick < y+yDimension)){
-            System.out.println("you clicked "+name);
-            return true;
-        }
-        return false;
+                        Window.window.yClick < y + yDimension));
     }
     public void displayButton(){
 
