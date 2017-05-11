@@ -44,8 +44,10 @@ public abstract class Menu {
         }
     }
     public void questionButtons(){
+
         for (int scan = 0; scan < buttons.size(); scan++)
             buttons.get(scan).questionClicked();
+        questionPressed();
     }
-    public abstract void questionPressed();
+    public abstract void questionPressed();//should loop through the buttons you may have clicked.(excludes the value of buttons.get(0)
 }

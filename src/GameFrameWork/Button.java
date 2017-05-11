@@ -12,7 +12,7 @@ import java.text.AttributedCharacterIterator;
 public class Button {
     int x,y, xDimesion, yDimension;
     String name;
-    boolean clicked = false;
+    public boolean clicked = false;
     public Button(int x, int y, int xDimesion, int yDimension, String name){
         this.x = x;
         this.y = y;
