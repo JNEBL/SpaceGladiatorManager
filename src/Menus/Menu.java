@@ -13,6 +13,12 @@ import java.util.ArrayList;
 public abstract class Menu {
     public ArrayList<Button> buttons = new ArrayList<>();
 
+    public Menu(){
+        buttons.add(new Button(0,0,0,0,""));
+    }
+    public void displayAll(){
+        displayButtons();
+    }
     public void displayButtons(){
         Window.window.getGraphics().setColor(Color.white);
         Window.window.getGraphics().fillRect(0,0,1280,720);

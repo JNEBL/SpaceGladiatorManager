@@ -19,6 +19,7 @@ public class Button {
         this.yDimension = yDimension;
         this.name = name;
     }
+
     public boolean questionClicked(){
         if  ((Window.window.xClick > x &&
                 Window.window.xClick < x+xDimesion )&&
@@ -33,7 +34,7 @@ public class Button {
 
         Graphics g = Window.window.getGraphics();
         g.setColor(Color.gray);
-        g.fillRect(x,y,xDimesion, yDimension);
+        g.fillRect(x+2,y+2,xDimesion-2, yDimension-2);
         g.setColor(Color.black);
         g.drawString(name,x+5,y+yDimension/2);
     }
