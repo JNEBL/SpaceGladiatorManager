@@ -1,7 +1,6 @@
 package Menus;
 
-import GameFrameWork.*;
-import GameFrameWork.Button;
+import GameFrameWork.Buttons.Button;
 import GameFrameWork.Window;
 
 import java.awt.*;

@@ -1,8 +1,10 @@
-package GameFrameWork;
+package GameFrameWork.Buttons;
 
+import GameFrameWork.*;
 import com.sun.corba.se.impl.orbutil.graph.Graph;
 
 import java.awt.*;
+import java.awt.Window;
 import java.awt.image.ImageObserver;
 import java.text.AttributedCharacterIterator;
 
@@ -22,14 +24,14 @@ public class Button {
     }
 
     public void questionClicked() {
-        clicked = ((Window.window.xClick > x &&
-                Window.window.xClick < x + xDimesion) &&
-                (Window.window.yClick > y &&
-                        Window.window.yClick < y + yDimension));
+        clicked = ((GameFrameWork.Window.window.xClick > x &&
+                GameFrameWork.Window.window.xClick < x + xDimesion) &&
+                (GameFrameWork.Window.window.yClick > y &&
+                        GameFrameWork.Window.window.yClick < y + yDimension));
     }
     public void displayButton(){
 
-        Graphics g = Window.window.getGraphics();
+        Graphics g = GameFrameWork.Window.window.getGraphics();
         g.setColor(Color.darkGray);
         g.fillRect(x,y,xDimesion,yDimension);
         g.setColor(Color.gray);

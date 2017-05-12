@@ -1,19 +1,21 @@
-package GameFrameWork;
+package GameFrameWork.Buttons;
+
+import GameFrameWork.*;
 
 import java.awt.*;
 
 /**
  * Created by citim on 5/11/2017.
  */
-public class SelectionButton extends Button{
+public class ButtonSelection extends GameFrameWork.Buttons.Button {
     String description;
     //image of thing you are selecting. right now it will be a red box.
-    public SelectionButton(int x, int y, String name,String description){
+    public ButtonSelection(int x, int y, String name, String description){
         super(x+5,y+50,100,25,name);
 
     }
     public void displayButton(){
-        Graphics g = Window.window.getGraphics();
+        Graphics g = GameFrameWork.Window.window.getGraphics();
         g.setColor(Color.darkGray);
         g.fillRect(x,y,xDimesion,yDimension);
         g.setColor(Color.gray);

@@ -1,15 +1,18 @@
-package GameFrameWork;
+package GameFrameWork.Buttons;
+
+import GameFrameWork.Buttons.Button;
+import GameFrameWork.Window;
 
 import java.util.ArrayList;
 
 /**
  * Created by citim on 5/9/2017.
  */
-public class DropDownButton extends Button {
+public class ButtonDropDown extends Button {
     String[] buttonNames;
     ArrayList <Button> buttons = new ArrayList<>();
     boolean open = false;
-    public DropDownButton(int x, int y, int xDimesion, int yDimension, String name,String[] buttons){
+    public ButtonDropDown(int x, int y, int xDimesion, int yDimension, String name, String[] buttons){
         super(x,y,xDimesion,yDimension,name);
         buttonNames = buttons;
     }

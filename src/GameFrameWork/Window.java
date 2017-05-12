@@ -1,13 +1,9 @@
 package GameFrameWork;
 
-import Fighters.Gladiator.DataBaseGrabberGladiator.GladiatorDataBase;
 import Menus.*;
 import Menus.Menu;
-import Player.Player.Player;
 
 import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
 
 /**
  * Created by student5 on 5/8/17.
@@ -15,7 +11,7 @@ import java.util.ArrayList;
 public class Window extends JFrame{
     public static int xClick = 0,yClick = 0;
     public static Window window;
-    private static Menu menu = new StartMenu();
+    private static Menu menu = new MenuBootScreen();
     public Window(){
         super("GenericGame");
         setSize(1280,720);

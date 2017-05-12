@@ -1,17 +1,15 @@
 package Menus;
 
 
-import GameFrameWork.Button;
+import GameFrameWork.Buttons.Button;
 import GameFrameWork.Window;
-
-import javax.swing.*;
 
 
 /**
  * Created by jnebl on 5/6/2017.
  */
-public class StartMenu extends Menu{
-    public StartMenu(){
+public class MenuBootScreen extends Menu{
+    public MenuBootScreen(){
         super();
         buttons.add(new Button(80,200,100,40,"Start"));
         buttons.add(new Button(80,240,100,40,"Quit"));
@@ -20,7 +18,7 @@ public class StartMenu extends Menu{
         for (int scan = 1; scan < buttons.size(); scan++){
             if(buttons.get(scan).clicked){
                 if(scan == 1){
-                    Window.window.setMenu(new GameCreation());
+                    Window.window.setMenu(new MenuGameCreation());
                     break;
                 }
                 if(scan == 2) {
