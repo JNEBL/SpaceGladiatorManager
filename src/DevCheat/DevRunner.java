@@ -12,7 +12,7 @@ public class DevRunner {
         Window window = new Window();
         window.addMouseListener(new Mouse());
         window.refreshDisplay();
-        Window.menu.displayAll();
+        Window.getMenu().displayAll();
 
 
 

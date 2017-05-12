@@ -20,8 +20,7 @@ public class StartMenu extends Menu{
         for (int scan = 1; scan < buttons.size(); scan++){
             if(buttons.get(scan).clicked){
                 if(scan == 1){
-                    Window.menu = new GameCreation();
-                    Window.window.refreshDisplay();
+                    Window.window.setMenu(new GameCreation());
                     break;
                 }
                 if(scan == 2) {
