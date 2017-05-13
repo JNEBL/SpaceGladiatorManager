@@ -49,6 +49,8 @@ public class Universe {
             if (stars.get(x).getHyperSpaceLanes().size() == 0){
                 stars.get(x).addHyperSpaceLane
                         (new HyperSpaceLanes(Calculation.closestStarToSentStar(stars.get(x),x,stars)));
+                Calculation.closestStarToSentStar
+                        (stars.get(x),x,stars).addHyperSpaceLane(new HyperSpaceLanes(stars.get(x)));
             }
         }
     }
