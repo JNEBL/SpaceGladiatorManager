@@ -1,5 +1,6 @@
 package World.Galaxy.Universe;
 
+import Calculations.Calculation;
 import World.Galaxy.Stars.Stars.Stars;
 import World.Galaxy.Travel.HyperSpaceLanes;
 
@@ -44,6 +45,10 @@ public class Universe {
                     stars.get(x).addHyperSpaceLane(new HyperSpaceLanes(chosen));
                     stars.get(starIndex).addHyperSpaceLane(new HyperSpaceLanes(stars.get(x)));
                 }
+            }
+            if (stars.get(x).getHyperSpaceLanes().size() == 0){
+                stars.get(x).addHyperSpaceLane
+                        (new HyperSpaceLanes(Calculation.closestStarToSentStar(stars.get(x),x,stars)));
             }
         }
     }
