@@ -14,10 +14,8 @@ public class Stars {
     private ArrayList<SpacePort> spacePorts = new ArrayList<>();
     private ArrayList<HyperSpaceLanes> hyperSpaceLanes = new ArrayList<>();
     private int x,y,z;
+    private int[] location = new int[3];
     public Stars(int numStars){
-        this.x = (int)(numStars * 40 * Math.random());
-        this.y = (int)(numStars * 40 * Math.random());
-        this.z = (int)(numStars * 40 * Math.random());
         for (int x = 0;x < (int)(Math.random() * 3);x++){
             spacePorts.add(new SpacePort());
         }
@@ -44,10 +42,33 @@ public class Stars {
     public int getX() {
         return x;
     }
+    private void setX(int x) {
+        this.x = x;
+        this.location[0] = x;
+    }
+
     public int getY() {
         return y;
     }
+    private void setY(int y) {
+        this.y = y;
+        this.location[1] = y;
+    }
+
     public int getZ() {
         return z;
+    }
+    private void setZ(int z) {
+        this.z = z;
+        this.location[2] = z;
+    }
+
+    public void setLocation(int x,int y,int z) {
+        setX(x);
+        setY(y);
+        setZ(z);
+    }
+    public int[] getLocation() {
+        return location;
     }
 }
