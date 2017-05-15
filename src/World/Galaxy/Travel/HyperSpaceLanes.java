@@ -14,4 +14,9 @@ public class HyperSpaceLanes {
     public Stars getDestination() {
         return destination;
     }
+
+    @Override
+    public String toString() {
+        return "" + destination;
+    }
 }

@@ -36,7 +36,7 @@ public class Stars {
         return hyperSpaceLanes;
     }
     public void addHyperSpaceLane(HyperSpaceLanes hyperSpaceLanes){
-
+        this.hyperSpaceLanes.add(hyperSpaceLanes);
     }
 
     public int getX() {

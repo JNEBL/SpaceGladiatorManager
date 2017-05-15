@@ -21,16 +21,9 @@ public class Universe {
     private void setGalacticHyperSpaceLanes(int numStars){
         for (int x = 0;x < stars.size();x++){
             for (int y = 0;y < stars.size();y++){
-                if (((stars.get(x).getX() - ((int) (numStars * .02))) <= (stars.get(y).getX())) &&
-                        ((stars.get(x).getX() + ((int) (numStars * .02))) >= (stars.get(y).getX()))){
-                    if (((stars.get(x).getY()- ((int) (numStars * .02))) <= (stars.get(y).getY())) &&
-                            ((stars.get(x).getY()+ ((int) (numStars * .02))) >= (stars.get(y).getY()))){
-                        if (((stars.get(x).getZ()- ((int) (numStars * .02))) <= (stars.get(y).getZ())) &&
-                                ((stars.get(x).getZ()+ ((int) (numStars * .02))) >= (stars.get(y).getZ()))){
-                            if (x != y)
-                                stars.get(x).addHyperSpaceLane(new HyperSpaceLanes(stars.get(y)));
-                        }
-                    }
+
+                if (Calculation.starDistance(stars.get(x),stars.get(y)) < numStars * .1 && x != y){
+                    stars.get(x).addHyperSpaceLane(new HyperSpaceLanes(stars.get(y)));
                 }
             }
             if (Math.random() < .1){
@@ -125,7 +118,16 @@ public class Universe {
         int temp = 0;
         for (int x = 0;x < getNumberOfStars();x++){
             for (int y = 0;y < stars.get(x).getSpacePorts().size();y++){
-                temp+=1;
+                temp++;
+            }
+        }
+        return temp;
+    }
+    public int getNumberOfHyperSpaceLanes(){
+        int temp = 0;
+        for (int x = 0;x < getStars().size();x++){
+            for (int y = 0;y < getStars().get(x).getHyperSpaceLanes().size();y++){
+                temp++;
             }
         }
         return temp;

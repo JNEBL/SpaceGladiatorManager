@@ -15,6 +15,7 @@ public class DevRunner {
         System.out.println(universe.getNumberOfPlanets());
         System.out.println(universe.getNumberOfMoons());
         System.out.println(universe.getNumberOfSpaceStations());
+        System.out.println(universe.getNumberOfHyperSpaceLanes());
         System.out.println(universe.getGalaxyAttempts());
     }
 }
