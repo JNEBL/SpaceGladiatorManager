@@ -12,8 +12,8 @@ package Player.Player;
  * Created by jnebl on 5/6/2017.
  */
 public class Player {
-    ArrayList<MonetaryCurrency> currencies = new ArrayList<>();
-    ArrayList<Gladiator> gladiators = new ArrayList<>();
+    private ArrayList<MonetaryCurrency> currencies = new ArrayList<>();
+    private ArrayList<Gladiator> gladiators = new ArrayList<>();
     private Ship ship;
     public Player(){
         this.ship = ShipDataBase.getA35VerdShip();
