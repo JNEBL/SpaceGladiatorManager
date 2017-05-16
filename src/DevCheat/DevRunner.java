@@ -10,12 +10,16 @@ import World.Galaxy.Universe.Universe;
  */
 public class DevRunner {
     public static void main(String args[]){
-        Universe universe = new Universe(10000);
-        System.out.println(universe.getNumberOfStars());
-        System.out.println(universe.getNumberOfPlanets());
-        System.out.println(universe.getNumberOfMoons());
-        System.out.println(universe.getNumberOfSpaceStations());
-        System.out.println(universe.getNumberOfHyperSpaceLanes());
-        System.out.println(universe.getGalaxyAttempts());
+//        Universe universe = new Universe(10000);
+//        System.out.println(universe.getNumberOfStars());
+//        System.out.println(universe.getNumberOfPlanets());
+//        System.out.println(universe.getNumberOfMoons());
+//        System.out.println(universe.getNumberOfSpaceStations());
+//        System.out.println(universe.getNumberOfHyperSpaceLanes());
+//        System.out.println(universe.getGalaxyAttempts());
+        Window window = new Window();
+        window.addMouseListener(new Mouse());
+        window.refreshDisplay();
+        Window.getMenu().displayAll();
     }
 }

@@ -17,12 +17,14 @@ public class Mouse implements MouseListener{
         Window.xClick = mouseEvent.getX();
         Window.yClick = mouseEvent.getY();
         Window.questionButtons();
+        Window.holdingMouse = true;
     }
     public void mouseExited(MouseEvent mouseEvent){
 
     }
     public void mouseReleased(MouseEvent mouseEvent){
 
+        Window.holdingMouse = false;
     }
     public void mouseDragging(MouseEvent mouseEvent){
 

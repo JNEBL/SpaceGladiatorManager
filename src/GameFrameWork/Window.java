@@ -11,6 +11,7 @@ import javax.swing.*;
 public class Window extends JFrame{
     public static int xClick = 0,yClick = 0;
     public static Window window;
+    public static boolean holdingMouse = true;
     private static Menu menu = new MenuBootScreen();
     public Window(){
         super("GenericGame");
