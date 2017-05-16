@@ -7,7 +7,8 @@ import World.Economics.Base.MonetaryCurrency;
  */
 public class CurrencyMath {
     public static MonetaryCurrency currencyConversion(MonetaryCurrency firstCurrency,MonetaryCurrency convertedCurrency){
-        double firstEquation = 1 / firstCurrency.getGalacticStandardValue();
-        return convertedCurrency.getGalacticStandardValue() / firstEquation;
+        double ratio = convertedCurrency.getGalacticStandardValue() / firstCurrency.getGalacticStandardValue();
+        convertedCurrency.setAmount(ratio * firstCurrency.getAmount());
+        return convertedCurrency;
     }
 }

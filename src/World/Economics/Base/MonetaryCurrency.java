@@ -4,28 +4,27 @@ package World.Economics.Base;
  * Created by jnebl on 5/6/2017.
  */
 public class MonetaryCurrency {
-    private int amount;
-    double galacticStandardValue;
+    private double galacticStandardValue,amount;
     private String currencyName;
-    public MonetaryCurrency(int amount, double galacticStandardValue, String currencyName){
+    public MonetaryCurrency(double amount, double galacticStandardValue, String currencyName){
         setAmount(amount);
         setGalacticStandardValue(galacticStandardValue);
         setCurrencyName(currencyName);
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
-    private void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
         if (this.amount <= 0)
             this.amount = 0;
 
     }
-    public void incrementPositiveAmount(int amount){
+    public void incrementPositiveAmount(double amount){
         setAmount(this.amount + amount);
     }
-    public void incrementNegativeAmount(int amount){
+    public void incrementNegativeAmount(double amount){
         setAmount(this.amount - amount);
     }
 
