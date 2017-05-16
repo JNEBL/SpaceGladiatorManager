@@ -40,7 +40,6 @@ public class ButtonSlider extends Button{
                 g.setColor(Color.lightGray);
                 g.fillRect(x+2,y+2,((xDimesion-4)/points)*pointAt,yDimension-4);
             }
-            System.out.println(pointAt);
             clicked = true;
             displayButton();
         }

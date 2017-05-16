@@ -12,7 +12,7 @@ public class MenuCharacterSelection extends Menu {
     public MenuCharacterSelection(){
         buttons.add(new ButtonSelection(80,200,"Jim","A lone wolf and a great explorer."));
         buttons.add(new ButtonToggle(80,300,100,25,"toggle!",false));
-        buttons.add(new ButtonSlider(80,400,200,25,"slider",25));
+        buttons.add(new ButtonSlider(80,400,200,25,"slider",10));
     }
     public void questionPressed(){
 
