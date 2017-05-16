@@ -47,6 +47,7 @@ public class Universe {
             }
         }
     }
+
     private void setStarLocation(int numStars){
         for (int x = 0;x < stars.size();x++){
             stars.get(x).setLocation((int)(numStars * 40 * Math.random()),(int)(numStars * 40 * Math.random()),
@@ -68,6 +69,19 @@ public class Universe {
                 }
             }
         }
+        if (!restart){
+            checkGalacticHyperSpaceLanes(numStars);
+        }
+        else{
+            galaxyAttempts ++;
+            removeAllStars();
+            setStarLocation(numStars);
+            setGalacticHyperSpaceLanes(numStars);
+            checkGalaxy(numStars);
+        }
+    }
+    private void checkGalacticHyperSpaceLanes(int numStars){
+        boolean restart = false;
         if (restart){
             galaxyAttempts ++;
             removeAllStars();
@@ -98,7 +112,7 @@ public class Universe {
         int temp = 0;
         for (int x = 0;x < getNumberOfStars();x++){
             for (int y = 0;y < stars.get(x).getPlanets().size();y++){
-                temp+=1;
+                temp++;
             }
         }
         return temp;
@@ -108,7 +122,7 @@ public class Universe {
         for (int x = 0;x < getNumberOfStars();x++){
             for (int y = 0;y < stars.get(x).getPlanets().size();y++){
                 for (int z = 0;z < stars.get(x).getPlanets().get(y).getMoons().size();z++){
-                    temp+=1;
+                    temp++;
                 }
             }
         }
