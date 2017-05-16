@@ -10,4 +10,7 @@ public class CurrencyDataBase {
     public static MonetaryCurrency getGalacticCredits(int amount){
         return new GalacticCredits(amount);
     }
+    public static MonetaryCurrency getNovaRupiah(int amount){
+        return new GalacticCredits(amount);
+    }
 }
