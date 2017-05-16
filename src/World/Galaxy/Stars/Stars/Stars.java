@@ -15,16 +15,41 @@ public class Stars {
     private ArrayList<SpacePort> spacePorts = new ArrayList<>();
     private ArrayList<HyperSpaceLanes> hyperSpaceLanes = new ArrayList<>();
     private int x,y,z;
+    final int minRange = 500, maxRange = 2000;
     private int[] location = new int[3];
-    public Stars(int numStars){
-        for (int x = 0;x < (int)(Math.random() * 3);x++){
-            spacePorts.add(new SpacePort());
-        }
-        for (int x = 0;x < (int)(Math.random() * 13);x++){
-            planets.add(new Planet());
+    public Stars(ArrayList<Stars> starsAlreadyGenerated){
+        generateNewLocation(starsAlreadyGenerated);
+        boolean inBounds = false;
+        while (!inBounds){
+            boolean inBoundsSingle = false;
+            for(int scan = 0; scan < starsAlreadyGenerated.size(); scan++){
+                boolean inX, inY, inZ;
+                inX = Math.abs(starsAlreadyGenerated.get(scan).x-x) <= 500;
+                inY = Math.abs(starsAlreadyGenerated.get(scan).y-y) <= 500;
+                inZ = Math.abs(starsAlreadyGenerated.get(scan).z-z) <= 500;
+                if (inX||inY||inZ)inBounds = true;
+            }
+            if(!inBoundsSingle)generateNewLocation(starsAlreadyGenerated);
         }
     }
 
+    private void generateNewLocation(ArrayList<Stars> starsAlreadyGenerated){
+        if(starsAlreadyGenerated.size()!=0) {
+            int temp = (int) Math.random() * starsAlreadyGenerated.size();
+            if (Math.random() > .5)
+                x = (int) (starsAlreadyGenerated.get(temp).x + minRange + (Math.random() * maxRange - minRange));
+            else x = (int) (starsAlreadyGenerated.get(temp).x - minRange - (Math.random() * maxRange - minRange));
+
+            if (Math.random() > .5)
+                y = (int) (starsAlreadyGenerated.get(temp).y + minRange + (Math.random() * maxRange - minRange));
+            else y = (int) (starsAlreadyGenerated.get(temp).y - minRange - (Math.random() * maxRange - minRange));
+
+            if (Math.random() > .5)
+                z = (int) (starsAlreadyGenerated.get(temp).z + minRange + (Math.random() * maxRange - minRange));
+            else z = (int) (starsAlreadyGenerated.get(temp).z - minRange - (Math.random() * maxRange - minRange));
+        }
+        else{ x = 0;y = 0; z = 0;}
+    }
     public ArrayList<Planet> getPlanets() {
         return planets;
     }

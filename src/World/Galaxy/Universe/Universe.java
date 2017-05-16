@@ -101,7 +101,7 @@ public class Universe {
 
     private void addStars(int numStars){
         for (int x = 0;x < numStars;x++){
-            stars.add(new Stars(numStars));
+            stars.add(new Stars(stars));
         }
     }
     public ArrayList<Stars> getStars() {
