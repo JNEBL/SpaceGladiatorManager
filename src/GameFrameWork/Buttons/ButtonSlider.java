@@ -30,7 +30,7 @@ public class ButtonSlider extends Button{
             {
                 int tempPointAt = 0;
                 for(int scan = 0; scan < points+1; scan++){
-                    if(Window.xClick < (x+(xDimesion/points)*scan)+20 && Window.xClick > (x+(xDimesion/points)*scan)-20  )
+                    if(Window.xClick < (x+(xDimesion/points)*scan)+xDimesion/points && Window.xClick > (x+(xDimesion/points)*scan)-xDimesion/points  )
                         tempPointAt = scan;
                 }
                 pointAt = tempPointAt;
@@ -39,7 +39,6 @@ public class ButtonSlider extends Button{
                 g.fillRect(x+2,y+2,xDimesion-4, yDimension-4);
                 g.setColor(Color.lightGray);
                 g.fillRect(x+2,y+2,((xDimesion-4)/points)*pointAt,yDimension-4);
-
             }
             clicked = true;
             displayButton();
