@@ -18,7 +18,7 @@ public class ButtonSelection extends GameFrameWork.Buttons.Button {
         Graphics g = GameFrameWork.Window.window.getGraphics();
         g.setColor(Color.darkGray);
         g.fillRect(x,y,xDimesion,yDimension);
-        g.setColor(Color.gray);
+        g.setColor(Color.lightGray);
         g.fillRect(x+2,y+2,xDimesion-4, yDimension-4);
         g.fillRect(x+9,y-115,80,110);
         g.setColor(Color.red);
