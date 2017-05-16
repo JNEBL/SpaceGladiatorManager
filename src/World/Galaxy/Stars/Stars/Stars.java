@@ -1,5 +1,6 @@
 package World.Galaxy.Stars.Stars;
 
+import Calculations.Calculation;
 import World.Galaxy.Stars.Planets.Planets.Planet;
 import World.Galaxy.Stars.SpacePort.SpacePort;
 import World.Galaxy.Travel.HyperSpaceLanes;
@@ -37,6 +38,12 @@ public class Stars {
     }
     public void addHyperSpaceLane(HyperSpaceLanes hyperSpaceLanes){
         this.hyperSpaceLanes.add(hyperSpaceLanes);
+    }
+    public void setHyperSpaceTravelDistance(){
+        for (int x = 0;x < hyperSpaceLanes.size();x++){
+            hyperSpaceLanes.get(x).setTravelDistance((int)(Calculation.starDistance
+                    (this,hyperSpaceLanes.get(x).getDestination())));
+        }
     }
 
     public int getX() {

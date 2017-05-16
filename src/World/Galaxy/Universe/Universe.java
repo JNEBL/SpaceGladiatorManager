@@ -18,6 +18,7 @@ public class Universe {
         setGalacticHyperSpaceLanes(numStars);
         checkGalaxy(numStars);
     }
+
     private void setGalacticHyperSpaceLanes(int numStars){
         for (int x = 0;x < stars.size();x++){
             for (int y = 0;y < stars.size();y++){
@@ -46,8 +47,10 @@ public class Universe {
                         (stars.get(x),x,stars).addHyperSpaceLane(new HyperSpaceLanes(stars.get(x)));
             }
         }
+        for (int x = 0;x < stars.size();x++){
+            stars.get(x).setHyperSpaceTravelDistance();
+        }
     }
-
     private void setStarLocation(int numStars){
         for (int x = 0;x < stars.size();x++){
             stars.get(x).setLocation((int)(numStars * 40 * Math.random()),(int)(numStars * 40 * Math.random()),
