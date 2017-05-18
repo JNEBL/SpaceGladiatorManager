@@ -14,49 +14,56 @@ public class Universe {
     private int galaxyAttempts = 1;
     public Universe(int numStars){
         addStars(numStars);
-        setStarLocation(numStars);
-        setGalacticHyperSpaceLanes(numStars);
+        setGalacticHyperSpaceLanes();
         checkGalaxy(numStars);
     }
 
-    private void setGalacticHyperSpaceLanes(int numStars){
-        for (int x = 0;x < stars.size();x++){
-            for (int y = 0;y < stars.size();y++){
+    private void setGalacticHyperSpaceLanes(){
+        for (int x = 0;x < stars.size();x++) {//origin
+            for (int y = 0; y < stars.size(); y++) {//destination
+                if(Calculation.starDistance(stars.get(x),stars.get(y)) <= Stars.maxRange && stars.get(x) != stars.get(y)){
+                    boolean pathIsVoid = true;
+                    for(int scan = 0; scan < stars.get(x).getHyperSpaceLanes().size(); scan++){
+                        if (stars.get(x).getHyperSpaceLanes().get(scan).getOrigin()==stars.get(y) ||
+                                stars.get(x).getHyperSpaceLanes().get(scan).getDestination()==stars.get(y)  )
+                            pathIsVoid = false; //is already a path to this star.
 
-                if (Calculation.starDistance(stars.get(x),stars.get(y)) < numStars * .1 && x != y){
-                    stars.get(x).addHyperSpaceLane(new HyperSpaceLanes(stars.get(y)));
+                    }
+                    if(pathIsVoid)
+                    stars.get(x).addHyperSpaceLane(new HyperSpaceLanes(stars.get(x),stars.get(y)));
                 }
             }
-            if (Math.random() < .1){
-                int starIndex = (int)(Math.random() * numStars);
-                Stars chosen = stars.get(starIndex);
-                boolean notSameStar = true;
-                for (int z = 0;z < stars.get(x).getHyperSpaceLanes().size();z++){
-                    if (stars.get(x).getHyperSpaceLanes().get(z).getDestination() == chosen)
-                        notSameStar = false;
-                }
-                if (notSameStar) {
-                    stars.get(x).addHyperSpaceLane(new HyperSpaceLanes(chosen));
-                    stars.get(starIndex).addHyperSpaceLane(new HyperSpaceLanes(stars.get(x)));
-                }
+        }
+
+//                if (Calculation.starDistance(stars.get(x),stars.get(y)) < numStars * .1 && x != y){
+//                    stars.get(x).addHyperSpaceLane(new HyperSpaceLanes(stars.get(y)));
+//                }
+//            }
+//            if (Math.random() < .1){
+//                int starIndex = (int)(Math.random() * numStars);
+//                Stars chosen = stars.get(starIndex);
+//                boolean notSameStar = true;
+//                for (int z = 0;z < stars.get(x).getHyperSpaceLanes().size();z++){
+//                    if (stars.get(x).getHyperSpaceLanes().get(z).getDestination() == chosen)
+//                        notSameStar = false;
+//                }
+//                if (notSameStar) {
+//                    stars.get(x).addHyperSpaceLane(new HyperSpaceLanes(chosen));
+//                    stars.get(starIndex).addHyperSpaceLane(new HyperSpaceLanes(stars.get(x)));
+//                }
+//            }
+//            if (stars.get(x).getHyperSpaceLanes().size() == 0){
+//                stars.get(x).addHyperSpaceLane
+//                        (new HyperSpaceLanes(Calculation.closestStarToSentStar(stars.get(x),x,stars)));
+//                Calculation.closestStarToSentStar
+//                        (stars.get(x),x,stars).addHyperSpaceLane(new HyperSpaceLanes(stars.get(x)));
+//            }
+//        }
+//        for (int x = 0;x < stars.size();x++){
+//            stars.get(x).setHyperSpaceTravelDistance();
+//        }
             }
-            if (stars.get(x).getHyperSpaceLanes().size() == 0){
-                stars.get(x).addHyperSpaceLane
-                        (new HyperSpaceLanes(Calculation.closestStarToSentStar(stars.get(x),x,stars)));
-                Calculation.closestStarToSentStar
-                        (stars.get(x),x,stars).addHyperSpaceLane(new HyperSpaceLanes(stars.get(x)));
-            }
-        }
-        for (int x = 0;x < stars.size();x++){
-            stars.get(x).setHyperSpaceTravelDistance();
-        }
-    }
-    private void setStarLocation(int numStars){
-        for (int x = 0;x < stars.size();x++){
-            stars.get(x).setLocation((int)(numStars * 40 * Math.random()),(int)(numStars * 40 * Math.random()),
-                    (int)(numStars * 40 * Math.random()));
-        }
-    }
+
     private void checkGalaxy(int numStars){
         boolean restart = false;
         for (int x = 0;x < stars.size();x++){
@@ -78,8 +85,7 @@ public class Universe {
         else{
             galaxyAttempts ++;
             removeAllStars();
-            setStarLocation(numStars);
-            setGalacticHyperSpaceLanes(numStars);
+            setGalacticHyperSpaceLanes();
             checkGalaxy(numStars);
         }
     }
@@ -88,8 +94,7 @@ public class Universe {
         if (restart){
             galaxyAttempts ++;
             removeAllStars();
-            setStarLocation(numStars);
-            setGalacticHyperSpaceLanes(numStars);
+            setGalacticHyperSpaceLanes();
             checkGalaxy(numStars);
         }
     }

@@ -15,7 +15,7 @@ public class Stars {
     private ArrayList<SpacePort> spacePorts = new ArrayList<>();
     private ArrayList<HyperSpaceLanes> hyperSpaceLanes = new ArrayList<>();
     private int x = 0,y = 0,z = 0;
-    final int minRange = 500, maxRange = 2000;
+    public static final int minRange = 500, maxRange = 2000;
     private int[] location = new int[3];
     public Stars(ArrayList<Stars> starsAlreadyGenerated){
         generateNewLocation(starsAlreadyGenerated);
