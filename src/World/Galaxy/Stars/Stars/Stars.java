@@ -14,26 +14,33 @@ public class Stars {
     private ArrayList<Planet> planets = new ArrayList<>();
     private ArrayList<SpacePort> spacePorts = new ArrayList<>();
     private ArrayList<HyperSpaceLanes> hyperSpaceLanes = new ArrayList<>();
-    private int x,y,z;
+    private int x = 0,y = 0,z = 588;
     final int minRange = 500, maxRange = 2000;
     private int[] location = new int[3];
     public Stars(ArrayList<Stars> starsAlreadyGenerated){
+        System.out.println("star started");
         generateNewLocation(starsAlreadyGenerated);
         boolean inBounds = false;
         while (!inBounds){
             boolean inBoundsSingle = false;
-            for(int scan = 0; scan < starsAlreadyGenerated.size(); scan++){
-                boolean inX, inY, inZ;
-                inX = Math.abs(starsAlreadyGenerated.get(scan).x-x) <= 500;
-                inY = Math.abs(starsAlreadyGenerated.get(scan).y-y) <= 500;
-                inZ = Math.abs(starsAlreadyGenerated.get(scan).z-z) <= 500;
-                if (inX||inY||inZ)inBounds = true;
+            if(starsAlreadyGenerated.size() != 0) {
+                for (int scan = 0; scan < starsAlreadyGenerated.size(); scan++) {
+                    boolean inX, inY, inZ;
+                    inX = Math.abs(starsAlreadyGenerated.get(scan).x - x) <= 500;
+                    inY = Math.abs(starsAlreadyGenerated.get(scan).y - y) <= 500;
+                    inZ = Math.abs(starsAlreadyGenerated.get(scan).z - z) <= 500;
+                    if (inX || inY || inZ) inBoundsSingle = true;
+
+                }
+                if (!inBoundsSingle) generateNewLocation(starsAlreadyGenerated);
             }
-            if(!inBoundsSingle)generateNewLocation(starsAlreadyGenerated);
         }
+        System.out.println("star ended");
     }
 
     private void generateNewLocation(ArrayList<Stars> starsAlreadyGenerated){
+        System.out.println("new location needed for "+x+" , "+y+" , "+z);
+        System.out.println("stars present = "+ starsAlreadyGenerated.size());
         if(starsAlreadyGenerated.size()!=0) {
             int temp = (int) Math.random() * starsAlreadyGenerated.size();
             if (Math.random() > .5)
