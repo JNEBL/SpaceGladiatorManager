@@ -14,11 +14,10 @@ public class Stars {
     private ArrayList<Planet> planets = new ArrayList<>();
     private ArrayList<SpacePort> spacePorts = new ArrayList<>();
     private ArrayList<HyperSpaceLanes> hyperSpaceLanes = new ArrayList<>();
-    private int x = 0,y = 0,z = 588;
+    private int x = 0,y = 0,z = 0;
     final int minRange = 500, maxRange = 2000;
     private int[] location = new int[3];
     public Stars(ArrayList<Stars> starsAlreadyGenerated){
-        System.out.println("star started");
         generateNewLocation(starsAlreadyGenerated);
         boolean inBounds = false;
         while (!inBounds){
@@ -33,14 +32,16 @@ public class Stars {
 
                 }
                 if (!inBoundsSingle) generateNewLocation(starsAlreadyGenerated);
-            }
+            }else
+                generateNewLocation(starsAlreadyGenerated);
+            inBounds = true;
         }
-        System.out.println("star ended");
+        System.out.println("star created at : "+x+", "+y+", "+z);
     }
 
     private void generateNewLocation(ArrayList<Stars> starsAlreadyGenerated){
-        System.out.println("new location needed for "+x+" , "+y+" , "+z);
-        System.out.println("stars present = "+ starsAlreadyGenerated.size());
+//        System.out.println("new location needed for "+x+" , "+y+" , "+z);
+//        System.out.println("stars present = "+ starsAlreadyGenerated.size());
         if(starsAlreadyGenerated.size()!=0) {
             int temp = (int) Math.random() * starsAlreadyGenerated.size();
             if (Math.random() > .5)
@@ -55,7 +56,8 @@ public class Stars {
                 z = (int) (starsAlreadyGenerated.get(temp).z + minRange + (Math.random() * maxRange - minRange));
             else z = (int) (starsAlreadyGenerated.get(temp).z - minRange - (Math.random() * maxRange - minRange));
         }
-        else{ x = 0;y = 0; z = 0;}
+        else{
+            x = 0;y = 0; z = 0;}
     }
     public ArrayList<Planet> getPlanets() {
         return planets;
