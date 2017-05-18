@@ -36,7 +36,7 @@ public class Stars {
                 generateNewLocation(starsAlreadyGenerated);
             inBounds = true;
         }
-        System.out.println("star created at : "+x+", "+y+", "+z);
+//        System.out.println("star created at : "+x+", "+y+", "+z);
     }
 
     private void generateNewLocation(ArrayList<Stars> starsAlreadyGenerated){

@@ -19,16 +19,22 @@ public class Universe {
     }
 
     private void setGalacticHyperSpaceLanes(){
+        if(stars.size() > 1)
         for (int x = 0;x < stars.size();x++) {//origin
             for (int y = 0; y < stars.size(); y++) {//destination
                 if(Calculation.starDistance(stars.get(x),stars.get(y)) <= Stars.maxRange && stars.get(x) != stars.get(y)){
                     boolean pathIsVoid = true;
                     for(int scan = 0; scan < stars.get(x).getHyperSpaceLanes().size(); scan++){
                         if (stars.get(x).getHyperSpaceLanes().get(scan).getOrigin()==stars.get(y) ||
-                                stars.get(x).getHyperSpaceLanes().get(scan).getDestination()==stars.get(y)  )
-                            pathIsVoid = false; //is already a path to this star.
-
+                                stars.get(x).getHyperSpaceLanes().get(scan).getDestination()==stars.get(y))
+                            pathIsVoid = false;
                     }
+                    for(int scan = 0; scan < stars.get(y).getHyperSpaceLanes().size(); scan++){
+                        if (stars.get(y).getHyperSpaceLanes().get(scan).getOrigin()==stars.get(x) ||
+                                stars.get(y).getHyperSpaceLanes().get(scan).getDestination()==stars.get(x))
+                            pathIsVoid = false; //is already a path to this star. this is not working
+                    }
+                    //is already a path to this star.
                     if(pathIsVoid)
                     stars.get(x).addHyperSpaceLane(new HyperSpaceLanes(stars.get(x),stars.get(y)));
                 }

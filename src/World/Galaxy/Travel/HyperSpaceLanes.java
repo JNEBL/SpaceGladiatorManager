@@ -10,7 +10,7 @@ public class HyperSpaceLanes {
     private int travelDistance;
     public HyperSpaceLanes(Stars origin, Stars destination){
         this.origin = origin; this.destination = destination;
-        System.out.println("hyperspace lane created from: \n"+origin+"\nto: "+destination);
+//        System.out.println("hyperspace lane created from: \n"+origin+"\nto: "+destination);
     }
 
     public Stars getDestination() {
