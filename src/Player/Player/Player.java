@@ -5,6 +5,7 @@ package Player.Player;
         import Player.Ship.DataBaseGrabberShip.ShipDataBase;
         import World.Economics.Base.MonetaryCurrency;
         import World.Economics.DataBaseCurrencyGrabber.CurrencyDataBase;
+        import World.Language.Base.Language;
 
         import java.util.ArrayList;
 
@@ -14,6 +15,7 @@ package Player.Player;
 public class Player {
     private ArrayList<MonetaryCurrency> currencies = new ArrayList<>();
     private ArrayList<Gladiator> gladiators = new ArrayList<>();
+    private ArrayList<Language> languages = new ArrayList<>();
     private Ship ship;
     public Player(){
         this.ship = ShipDataBase.getA35VerdShip();
@@ -38,5 +40,9 @@ public class Player {
     public void removeGladiator(int index){
         if (index > -1)
             gladiators.remove(index);
+    }
+
+    public ArrayList<Language> getLanguages() {
+        return languages;
     }
 }
