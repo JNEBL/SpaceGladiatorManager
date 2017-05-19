@@ -33,11 +33,11 @@ public class MenuUniverseCreation extends Menu {
                     System.out.println("Started world generation");
                     Unigen.universe = new Universe(500);
                     System.out.println("Ended world generation");
-                    System.out.println(Unigen.universe.getNumberOfStars());
-                    System.out.println(Unigen.universe.getNumberOfHyperSpaceLanes());
-                    System.out.println(Unigen.universe.xDimension);
-                    System.out.println(Unigen.universe.yDimension);
-                    System.out.println(Unigen.universe.zDimension);
+                    System.out.println(Unigen.universe.getNumberOfStars()+"stars");
+                    System.out.println(Unigen.universe.getNumberOfHyperSpaceLanes()+"hyperspace lanes");
+                    System.out.println(Unigen.universe.xDimension+ "for x dimension");
+                    System.out.println(Unigen.universe.yDimension+ "for y dimension");
+                    System.out.println(Unigen.universe.zDimension+ "for z dimension");
 
                     break;
                 }
