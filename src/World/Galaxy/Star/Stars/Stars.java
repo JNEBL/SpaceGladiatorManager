@@ -40,6 +40,9 @@ public class Stars {
         //end location generation!
         //start planet generation!
         int planets = (int)(Math.random()*11);
+        for(int scan = 0; scan < planets; scan++){
+            this.planets.add(new Planet());
+        }
         //end planet generation!
     }
 
@@ -48,6 +51,7 @@ public class Stars {
 //        System.out.println("stars present = "+ starsAlreadyGenerated.size());
         if(starsAlreadyGenerated.size()!=0) {
             int temp = (int) (Math.random() * starsAlreadyGenerated.size());
+            //this next part needs to be fixed. if x y and z are ++500'ed they are out of range. neble help
             if (Math.random() > .5)
                 x = (int) (starsAlreadyGenerated.get(temp).x + minRange + (Math.random() * maxRange - minRange));
             else x = (int) (starsAlreadyGenerated.get(temp).x - minRange - (Math.random() * maxRange - minRange));

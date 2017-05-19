@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Planet {
     private int megaMileRadius;
     private ArrayList<Moon> moons = new ArrayList<>();
+    int distanceFromStar;
     public Planet(){
         
         //radius of earth is 4000
@@ -21,6 +22,7 @@ public class Planet {
         //moons should be around 1 megamile. minor moons are labled as < 1 megamile.
         //moons should be minable. same with planets.
         //the bigger a planet the more moons they will have
+
         for (int x = 0;x < Math.random() * 36;x++){
             moons.add(new Moon());
         }

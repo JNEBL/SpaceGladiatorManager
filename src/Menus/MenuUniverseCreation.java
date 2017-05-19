@@ -38,6 +38,11 @@ public class MenuUniverseCreation extends Menu {
                     System.out.println(Unigen.universe.xDimension+ " for x dimension");
                     System.out.println(Unigen.universe.yDimension+ " for y dimension");
                     System.out.println(Unigen.universe.zDimension+ " for z dimension");
+                    System.out.println(Unigen.universe.getNumberOfPlanets()+" is the number of planets");
+                    System.out.println(Unigen.universe.getNumberOfMoons()+" is the number of moons");
+                    System.out.println(Unigen.universe.getNumberOfSpaceStations()+" is the number of space Stations");
+
+
 
                     break;
                 }
