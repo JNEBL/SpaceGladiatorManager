@@ -1,4 +1,4 @@
-package World.Galaxy.Stars.SpacePort;
+package World.Galaxy.Star.SpacePort;
 
 /**
  * Created by student5 on 5/11/17.

@@ -1,8 +1,8 @@
-package World.Galaxy.Stars.Stars;
+package World.Galaxy.Star.Stars;
 
 import Calculations.Calculation;
-import World.Galaxy.Stars.Planets.Planets.Planet;
-import World.Galaxy.Stars.SpacePort.SpacePort;
+import World.Galaxy.Star.Planets.Planets.Planet;
+import World.Galaxy.Star.SpacePort.SpacePort;
 import World.Galaxy.Travel.HyperSpaceLanes;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package World.Galaxy.Travel;
 
-import World.Galaxy.Stars.Stars.Stars;
+import World.Galaxy.Star.Stars.Stars;
 
 /**
  * Created by jnebl on 5/12/2017.

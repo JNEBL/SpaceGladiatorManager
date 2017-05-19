@@ -1,7 +1,7 @@
 package World.Galaxy.Universe;
 
 import Calculations.Calculation;
-import World.Galaxy.Stars.Stars.Stars;
+import World.Galaxy.Star.Stars.Stars;
 import World.Galaxy.Travel.HyperSpaceLanes;
 
 import java.util.ArrayList;
@@ -12,34 +12,50 @@ import java.util.ArrayList;
 public class Universe {
     private ArrayList<Stars> stars = new ArrayList<>();
     private int galaxyAttempts = 1;
+    public int xEnd = 0, yEnd = 0,zEnd = 0, xStart = 0, yStart = 0, zStart = 0, xDimension, yDimension, zDimension;
     public Universe(int numStars){
         addStars(numStars);
         setGalacticHyperSpaceLanes();
+        findUniverseBounds();
         checkGalaxy(numStars);
     }
 
-    private void setGalacticHyperSpaceLanes(){
-        if(stars.size() > 1)
-        for (int x = 0;x < stars.size();x++) {//origin
-            for (int y = 0; y < stars.size(); y++) {//destination
-                if(Calculation.starDistance(stars.get(x),stars.get(y)) <= Stars.maxRange && stars.get(x) != stars.get(y)){
-                    boolean pathIsVoid = true;
-                    for(int scan = 0; scan < stars.get(x).getHyperSpaceLanes().size(); scan++){
-                        if (stars.get(x).getHyperSpaceLanes().get(scan).getOrigin()==stars.get(y) ||
-                                stars.get(x).getHyperSpaceLanes().get(scan).getDestination()==stars.get(y))
-                            pathIsVoid = false;
+    private void setGalacticHyperSpaceLanes() {
+        if (stars.size() > 1)
+            for (int x = 0; x < stars.size(); x++) {//origin
+                for (int y = 0; y < stars.size(); y++) {//destination
+                    if (Calculation.starDistance(stars.get(x), stars.get(y)) <= Stars.maxRange && stars.get(x) != stars.get(y)) {
+                        boolean pathIsVoid = true;
+                        for (int scan = 0; scan < stars.get(x).getHyperSpaceLanes().size(); scan++) {
+                            if (stars.get(x).getHyperSpaceLanes().get(scan).getOrigin() == stars.get(y) ||
+                                    stars.get(x).getHyperSpaceLanes().get(scan).getDestination() == stars.get(y))
+                                pathIsVoid = false;
+                        }
+                        for (int scan = 0; scan < stars.get(y).getHyperSpaceLanes().size(); scan++) {
+                            if (stars.get(y).getHyperSpaceLanes().get(scan).getOrigin() == stars.get(x) ||
+                                    stars.get(y).getHyperSpaceLanes().get(scan).getDestination() == stars.get(x))
+                                pathIsVoid = false; //is already a path to this star. this is not working
+                        }
+                        //is already a path to this star.
+                        if (pathIsVoid)
+                            stars.get(x).addHyperSpaceLane(new HyperSpaceLanes(stars.get(x), stars.get(y)));
                     }
-                    for(int scan = 0; scan < stars.get(y).getHyperSpaceLanes().size(); scan++){
-                        if (stars.get(y).getHyperSpaceLanes().get(scan).getOrigin()==stars.get(x) ||
-                                stars.get(y).getHyperSpaceLanes().get(scan).getDestination()==stars.get(x))
-                            pathIsVoid = false; //is already a path to this star. this is not working
-                    }
-                    //is already a path to this star.
-                    if(pathIsVoid)
-                    stars.get(x).addHyperSpaceLane(new HyperSpaceLanes(stars.get(x),stars.get(y)));
                 }
             }
-        }
+    }
+        public void findUniverseBounds(){
+            for(int scan = 0; scan < stars.size(); scan++){
+                if (stars.get(scan).getX() < xStart)xStart = stars.get(scan).getX();
+                if (stars.get(scan).getY() < yStart)yStart = stars.get(scan).getY();
+                if (stars.get(scan).getZ() < zStart)zStart = stars.get(scan).getZ();
+                if (stars.get(scan).getX() > xEnd)xEnd = stars.get(scan).getX();
+                if (stars.get(scan).getY() > yEnd)yEnd = stars.get(scan).getY();
+                if (stars.get(scan).getZ() > zEnd)zEnd = stars.get(scan).getZ();
+                xDimension = xStart*(-1)+xEnd;
+                yDimension = yStart*(-1)+yEnd;
+                zDimension = zStart*(-1)+zEnd;
+            }
+    }
 
 //                if (Calculation.starDistance(stars.get(x),stars.get(y)) < numStars * .1 && x != y){
 //                    stars.get(x).addHyperSpaceLane(new HyperSpaceLanes(stars.get(y)));
@@ -47,7 +63,7 @@ public class Universe {
 //            }
 //            if (Math.random() < .1){
 //                int starIndex = (int)(Math.random() * numStars);
-//                Stars chosen = stars.get(starIndex);
+//                Star chosen = stars.get(starIndex);
 //                boolean notSameStar = true;
 //                for (int z = 0;z < stars.get(x).getHyperSpaceLanes().size();z++){
 //                    if (stars.get(x).getHyperSpaceLanes().get(z).getDestination() == chosen)
@@ -68,7 +84,6 @@ public class Universe {
 //        for (int x = 0;x < stars.size();x++){
 //            stars.get(x).setHyperSpaceTravelDistance();
 //        }
-            }
 
     private void checkGalaxy(int numStars){
         boolean restart = false;

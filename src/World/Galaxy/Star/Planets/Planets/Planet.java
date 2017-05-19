@@ -1,6 +1,6 @@
-package World.Galaxy.Stars.Planets.Planets;
+package World.Galaxy.Star.Planets.Planets;
 
-import World.Galaxy.Stars.Planets.Moon.Moon;
+import World.Galaxy.Star.Planets.Moon.Moon;
 
 import java.util.ArrayList;
 
