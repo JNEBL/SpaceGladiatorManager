@@ -41,7 +41,7 @@ public class Stars {
         //start planet generation!
         int planets = (int)(Math.random()*11);
         for(int scan = 0; scan < planets; scan++){
-            this.planets.add(new Planet());
+            this.planets.add(new Planet(this));
         }
         //end planet generation!
     }

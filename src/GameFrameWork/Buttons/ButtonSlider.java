@@ -36,11 +36,14 @@ public class ButtonSlider extends Button{
                         tempPointAt = scan;
                 }
                 pointAt = tempPointAt;
+                System.out.println(xDimesion);
+                System.out.println(points);
+                System.out.println(pointAt);
                 Graphics g = Window.window.getGraphics();
                 g.setColor(Color.gray);
-                g.fillRect(x+2,y+2,xDimesion-4, yDimension-4);
+                g.fillRect(x+2,y+2,xDimesion-2, yDimension-4);
                 g.setColor(Color.lightGray);
-                g.fillRect(x+2,y+2,((xDimesion-4)/points)*pointAt,yDimension-4);
+                g.fillRect(x+2,y+2,((xDimesion)/points)*pointAt -2,yDimension-2);
             }
             clicked = true;
             displayButton();

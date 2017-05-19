@@ -15,7 +15,7 @@ public class MenuUniverseCreation extends Menu {
 
     private Integer stars = 50;
     public MenuUniverseCreation(){
-        buttons.add(new Button(1100,600,100,40,"Create Universe"));
+        buttons.add(new Button(60,600,100,40,"Create Universe"));
         buttons.add(new ButtonSlider(60,200,500,25,"stars",1000,stars));
         //universe size
         //universe age?
@@ -23,7 +23,7 @@ public class MenuUniverseCreation extends Menu {
         //planet abundance
         //other things that can go on sliders or togglers?
         displayAll();
-        panels.add(new PanelRedBox(200,100,500,500));
+        panels.add(new PanelRedBox(200,90,900,600));
             }
 
     public void questionPressed(){
