@@ -11,13 +11,14 @@ import java.awt.*;
  */
 public class ButtonSlider extends Button{
     private int points;
-    public int pointAt = 0; //could be reasigned so that certain settings are in the middle by default
-    public ButtonSlider(int x, int y, int xDimesion, int yDimension, String name, int points) {
+    public int pointAt; //could be reasigned so that certain settings are in the middle by default
+    public ButtonSlider(int x, int y, int xDimesion, int yDimension, String name, int points, int currentlyAt) {
         super(x, y, xDimesion, yDimension, name);
         this.points = points;
         if (points < 2) {
             System.out.println("error: ButtonSlider created with less than 2 points");
             System.exit(0);
+            pointAt = currentlyAt;
         }
     }
     public void questionClicked() {

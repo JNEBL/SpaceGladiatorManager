@@ -17,7 +17,7 @@ public class MenuGameCreation extends Menu {
         for (int scan = 1; scan < buttons.size(); scan++) {
             if(buttons.get(scan).clicked) {
                 if (scan == 1) {
-                    Window.window.setMenu(new MenuCharacterSelection())
+                    Window.window.setMenu(new MenuUniverseCreation())
                     ;break;
                 }
                 if (scan == 2) {
