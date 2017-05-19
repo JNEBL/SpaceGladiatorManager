@@ -1,5 +1,6 @@
 package Menus;
 
+import GameFrameWork.*;
 import GameFrameWork.Buttons.Button;
 import GameFrameWork.Window;
 
@@ -10,13 +11,16 @@ import java.util.ArrayList;
  * Created by citim on 5/10/2017.
  */
 public abstract class Menu {
-    public ArrayList<Button> buttons = new ArrayList<Button>();
+    public ArrayList<Button> buttons = new ArrayList<>();
+    public ArrayList<GameFrameWork.Panel> panels = new ArrayList<>();
+
 
     public Menu(){
         buttons.add(new Button(0,0,0,0,""));
     }
     public void displayAll(){
         displayButtons();
+        displayComponents();
     }
     public void displayButtons(){
         Window.window.getGraphics().setColor(Color.white);
@@ -42,13 +46,18 @@ public abstract class Menu {
             voidButtons(buttons.get(scan));
         }
     }
-    public void questionButtons(){
+    public void questionButtons(){ //questions for menu buttons first, then component buttons
 
         for (int scan = 0; scan < buttons.size(); scan++)
             buttons.get(scan).questionClicked();
         questionPressed();
+
+        for(int scan = 0; scan < panels.size(); scan++){
+            panels.get(scan).questionButtons();
+        }
     }
     public abstract void questionPressed();//should loop through the buttons you may have clicked.(excludes the value of buttons.get(0)
+
 
 //    public void questionPressed(){ //this is a template. an if scan== x is needed per button
 //        for (int scan = 1; scan < buttons.size(); scan++) {
@@ -60,4 +69,10 @@ public abstract class Menu {
 //        }
 //    }
 //}
+
+    public void displayComponents(){
+        for(int scan = 0; scan < panels.size(); scan++){
+            panels.get(scan).display();
+        }
+    }
 }

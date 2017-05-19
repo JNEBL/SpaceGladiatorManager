@@ -3,6 +3,8 @@ package Menus;
 import Calculations.Unigen;
 import GameFrameWork.Buttons.Button;
 import GameFrameWork.Buttons.ButtonSlider;
+import GameFrameWork.Panel;
+import GameFrameWork.PanelRedBox;
 import GameFrameWork.Window;
 import World.Galaxy.Universe.Universe;
 
@@ -21,17 +23,22 @@ public class MenuUniverseCreation extends Menu {
         //planet abundance
         //other things that can go on sliders or togglers?
         displayAll();
-    }
+        panels.add(new PanelRedBox(200,100,500,500));
+            }
+
     public void questionPressed(){
         for (int scan = 1; scan < buttons.size(); scan++) {
             if(buttons.get(scan).clicked) {
                 if (scan == 1) {
                     System.out.println("Started world generation");
-                    Unigen.universe = new Universe(stars);
+                    Unigen.universe = new Universe(500);
                     System.out.println("Ended world generation");
                     System.out.println(Unigen.universe.getNumberOfStars());
                     System.out.println(Unigen.universe.getNumberOfHyperSpaceLanes());
-                    System.out.println(Unigen.universe.getGalaxyAttempts());
+                    System.out.println(Unigen.universe.xDimension);
+                    System.out.println(Unigen.universe.yDimension);
+                    System.out.println(Unigen.universe.zDimension);
+
                     break;
                 }
                 if (scan == 2) {
