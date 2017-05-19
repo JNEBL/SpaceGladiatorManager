@@ -11,9 +11,10 @@ import World.Galaxy.Universe.Universe;
  */
 public class MenuUniverseCreation extends Menu {
 
+    private Integer stars = 50;
     public MenuUniverseCreation(){
         buttons.add(new Button(1100,600,100,40,"Create Universe"));
-        buttons.add(new ButtonSlider(60,200,500,25,"stars",1000,1));
+        buttons.add(new ButtonSlider(60,200,500,25,"stars",1000,stars));
         //universe size
         //universe age?
         //difficulty
@@ -25,8 +26,15 @@ public class MenuUniverseCreation extends Menu {
         for (int scan = 1; scan < buttons.size(); scan++) {
             if(buttons.get(scan).clicked) {
                 if (scan == 1) {
-                    ButtonSlider b = (ButtonSlider)buttons.get(2);
-                    Unigen.universe = new Universe(b.pointAt);
+                    System.out.println("Started world generation");
+                    Unigen.universe = new Universe(stars);
+                    System.out.println("Ended world generation");
+                    System.out.println(Unigen.universe.getNumberOfStars());
+                    System.out.println(Unigen.universe.getNumberOfHyperSpaceLanes());
+                    System.out.println(Unigen.universe.getGalaxyAttempts());
+                    break;
+                }
+                if (scan == 2) {
                     break;
                 }
             }

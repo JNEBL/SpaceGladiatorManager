@@ -11,15 +11,15 @@ import java.awt.*;
  */
 public class ButtonSlider extends Button{
     private int points;
-    public int pointAt; //could be reasigned so that certain settings are in the middle by default
-    public ButtonSlider(int x, int y, int xDimesion, int yDimension, String name, int points, int currentlyAt) {
+    public Integer pointAt; //could be reasigned so that certain settings are in the middle by default
+    public ButtonSlider(int x, int y, int xDimesion, int yDimension, String name, int points, Integer currentlyAt) {
         super(x, y, xDimesion, yDimension, name);
         this.points = points;
         if (points < 2) {
             System.out.println("error: ButtonSlider created with less than 2 points");
             System.exit(0);
-            pointAt = currentlyAt;
         }
+        pointAt = currentlyAt;
     }
     public void questionClicked() {
         if ((GameFrameWork.Window.xClick > x &&
@@ -29,9 +29,10 @@ public class ButtonSlider extends Button{
 
 //            while (Window.holdingMouse) //dont know why this isnt working
             {
-                int tempPointAt = 0;
+                int tempPointAt = pointAt;
                 for(int scan = 0; scan < points+1; scan++){
                     if(Window.xClick < (x+(xDimesion/points)*scan)+xDimesion/points && Window.xClick > (x+(xDimesion/points)*scan)-xDimesion/points  )
+                        System.out.println(tempPointAt);
                         tempPointAt = scan;
                 }
                 pointAt = tempPointAt;
