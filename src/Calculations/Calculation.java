@@ -1,6 +1,6 @@
 package Calculations;
 
-import World.Galaxy.Stars.Stars.Stars;
+import World.Galaxy.Star.Stars.Stars;
 
 import java.util.ArrayList;
 
