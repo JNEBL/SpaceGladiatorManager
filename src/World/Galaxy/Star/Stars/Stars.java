@@ -18,6 +18,7 @@ public class Stars {
     public static final int minRange = 500, maxRange = 2000;
     private int[] location = new int[3];
     public Stars(ArrayList<Stars> starsAlreadyGenerated){
+        //start location generation!
         generateNewLocation(starsAlreadyGenerated);
         boolean inBounds = false;
         while (!inBounds){
@@ -36,14 +37,17 @@ public class Stars {
                 generateNewLocation(starsAlreadyGenerated);
             inBounds = true;
         }
-//        System.out.println("star created at : "+x+", "+y+", "+z);
+        //end location generation!
+        //start planet generation!
+        int planets = (int)(Math.random()*11);
+        //end planet generation!
     }
 
     private void generateNewLocation(ArrayList<Stars> starsAlreadyGenerated){
 //        System.out.println("new location needed for "+x+" , "+y+" , "+z);
 //        System.out.println("stars present = "+ starsAlreadyGenerated.size());
         if(starsAlreadyGenerated.size()!=0) {
-            int temp = (int) Math.random() * starsAlreadyGenerated.size();
+            int temp = (int) (Math.random() * starsAlreadyGenerated.size());
             if (Math.random() > .5)
                 x = (int) (starsAlreadyGenerated.get(temp).x + minRange + (Math.random() * maxRange - minRange));
             else x = (int) (starsAlreadyGenerated.get(temp).x - minRange - (Math.random() * maxRange - minRange));
