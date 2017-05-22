@@ -17,9 +17,9 @@ public class Planet {
     private Arena arena;
     public Planet(Star star){
         megaMileRadius = (int)(Math.random()*40)+1;
-        //max orbit from star is 1000000 megamiles;
+        //max orbit from star is 10000 megamiles;
         boolean validDistance = false;
-        distanceFromStar = (int) (Math.random() * 900000 + 100000);
+        distanceFromStar = (int) (Math.random() * 9000 + 1000);
         if (Math.random() < .1){
             this.hasArena = true;
             this.arena = new Arena();
