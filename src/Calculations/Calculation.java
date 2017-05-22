@@ -54,4 +54,7 @@ public class Calculation {
                 (Math.pow(starStart.getY() - starSecond.getY(),2)) +
                 (Math.pow(starStart.getZ() - starSecond.getZ(),2))));
     }
+    public static Object Selector(Object[] objects){
+        return objects[(int)(Math.random()*objects.length)];
+    }
 }
