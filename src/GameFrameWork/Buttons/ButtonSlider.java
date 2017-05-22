@@ -31,6 +31,7 @@ public class ButtonSlider extends Button{
             {
                 int tempPointAt = pointAt;
                 for(int scan = 0; scan < points+1; scan++){
+                    System.out.println(Window.xClick < (x+(xDimesion/points)*scan)+xDimesion/points && Window.xClick > (x+(xDimesion/points)*scan)-xDimesion/points);
                     if(Window.xClick < (x+(xDimesion/points)*scan)+xDimesion/points && Window.xClick > (x+(xDimesion/points)*scan)-xDimesion/points  )
                         System.out.println(tempPointAt);
                         tempPointAt = scan;
