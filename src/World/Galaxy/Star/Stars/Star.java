@@ -15,6 +15,7 @@ public class Star {
     private ArrayList<SpaceStation> spaceStations = new ArrayList<>();
     private ArrayList<HyperSpaceLanes> hyperSpaceLanes = new ArrayList<>();
     private int x = 0,y = 0,z = 0;
+    String color;
     public static final int minRange = 500, maxRange = 2000;
     private int[] location = new int[3];
     public Star(ArrayList<Star> starAlreadyGenerated){
@@ -38,6 +39,7 @@ public class Star {
             inBounds = true;
         }
         //end location generation!
+        color = (String)Calculation.Selector(new Object[] {"yellow","red","blue","white","orange"});
         if(Math.random()<.05) spaceStations.add(new SpaceStation(this));
         //start planet generation!
         int planets = (int)(Math.random()*11);
