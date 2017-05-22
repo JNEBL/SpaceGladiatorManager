@@ -8,7 +8,9 @@ import java.util.ArrayList;
  * Created by student5 on 5/22/17.
  */
 public class Team {
+    private String name;
     private ArrayList<Gladiator> gladiators = new ArrayList<>();
+    private int lifeTimeWins,LifeTimeLosses,LeagueLosses,LeagueWins;
     public Team(){
 
     }
