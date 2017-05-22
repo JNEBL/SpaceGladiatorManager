@@ -17,10 +17,10 @@ public class ButtonDropDown extends Button {
         buttonNames = buttons;
     }
     public void questionClicked(){
-        if  ((Window.window.xClick > x &&
-                Window.window.xClick < x+xDimesion )&&
-                (Window.window.yClick > y &&
-                        Window.window.yClick < y+yDimension)) {
+        if  ((Window.xClick > x &&
+                Window.xClick < x+xDimesion )&&
+                (Window.yClick > y &&
+                        Window.yClick < y+yDimension)) {
             if(!open)
             displayDrop();
             else

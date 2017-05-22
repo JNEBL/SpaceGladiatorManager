@@ -24,10 +24,10 @@ public class Button {
     }
 
     public void questionClicked() {
-        clicked = ((GameFrameWork.Window.window.xClick > x &&
-                GameFrameWork.Window.window.xClick < x + xDimesion) &&
-                (GameFrameWork.Window.window.yClick > y &&
-                        GameFrameWork.Window.window.yClick < y + yDimension));
+        clicked = ((GameFrameWork.Window.xClick > x &&
+                GameFrameWork.Window.xClick < x + xDimesion) &&
+                (GameFrameWork.Window.yClick > y &&
+                        GameFrameWork.Window.yClick < y + yDimension));
     }
     public void displayButton(){
 
