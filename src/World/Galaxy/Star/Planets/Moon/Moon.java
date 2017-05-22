@@ -11,6 +11,7 @@ public class Moon {
     private int distanceFromPlanet;
     private boolean hasArena;
     private Arena arena;
+    String moonType; //rock or ice
     public Moon(Planet planet){
         this.planet = planet;
         distanceFromPlanet = (int) (Math.random() * 500 + 100);
@@ -22,6 +23,8 @@ public class Moon {
             this.hasArena = false;
             this.arena = null;
         }
+        if(planet.getDistanceFromStar()>500 && Math.random() > .65) moonType = "ice";
+        else moonType = "rock";
     }
 
     public int getDistanceFromPlanet() {
