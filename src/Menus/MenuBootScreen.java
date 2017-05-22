@@ -12,7 +12,8 @@ public class MenuBootScreen extends Menu{
     public MenuBootScreen(){
         super();
         buttons.add(new Button(80,200,100,40,"Start"));
-        buttons.add(new Button(80,240,100,40,"Quit"));
+        buttons.add(new Button(80,320,100,40,"Quit"));
+        buttons.add(new Button(80,240,100,40,"Credits"));
     }
     public void questionPressed(){
         for (int scan = 1; scan < buttons.size(); scan++){
@@ -22,9 +23,12 @@ public class MenuBootScreen extends Menu{
                     break;
                 }
                 if(scan == 2) {
-
-                    System.out.println("you quit the game");
+                    System.out.println("you quit the game!");
                     System.exit(0);
+                }
+                if(scan == 3){
+                    Window.window.setMenu(new MenuCredits());
+                    break;
                 }
             }
         }
