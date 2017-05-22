@@ -1,22 +1,22 @@
 package World.Galaxy.Travel;
 
-import World.Galaxy.Star.Stars.Stars;
+import World.Galaxy.Star.Stars.Star;
 
 /**
  * Created by jnebl on 5/12/2017.
  */
 public class HyperSpaceLanes {
-    private Stars destination, origin;
+    private Star destination, origin;
     private int travelDistance;
-    public HyperSpaceLanes(Stars origin, Stars destination){
+    public HyperSpaceLanes(Star origin, Star destination){
         this.origin = origin; this.destination = destination;
 //        System.out.println("hyperspace lane created from: \n"+origin+"\nto: "+destination);
     }
 
-    public Stars getDestination() {
+    public Star getDestination() {
         return destination;
     }
-    public Stars getOrigin() {
+    public Star getOrigin() {
         return origin;
     }
     public int getTravelDistance() {

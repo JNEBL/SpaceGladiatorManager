@@ -1,7 +1,7 @@
 package World.Galaxy.Star.Planets.Planets;
 
 import World.Galaxy.Star.Planets.Moon.Moon;
-import World.Galaxy.Star.Stars.Stars;
+import World.Galaxy.Star.Stars.Star;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public class Planet {
     private int megaMileRadius;
     private ArrayList<Moon> moons = new ArrayList<>();
     int distanceFromStar;
-    public Planet(Stars star){
+    public Planet(Star star){
         megaMileRadius = (int)(Math.random()*40)+1;
         //max orbit from star is 1000000 megamiles;
         boolean validDistance = false;

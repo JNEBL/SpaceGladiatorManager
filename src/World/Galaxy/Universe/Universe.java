@@ -1,7 +1,7 @@
 package World.Galaxy.Universe;
 
 import Calculations.Calculation;
-import World.Galaxy.Star.Stars.Stars;
+import World.Galaxy.Star.Stars.Star;
 import World.Galaxy.Travel.HyperSpaceLanes;
 
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * Created by student5 on 5/11/17.
  */
 public class Universe {
-    private ArrayList<Stars> stars = new ArrayList<>();
+    private ArrayList<Star> stars = new ArrayList<>();
     private int galaxyAttempts = 1;
     public int xEnd = 0, yEnd = 0,zEnd = 0, xStart = 0, yStart = 0, zStart = 0, xDimension, yDimension, zDimension;
     public Universe(int numStars){
@@ -24,7 +24,7 @@ public class Universe {
         if (stars.size() > 1)
             for (int x = 0; x < stars.size(); x++) {//origin
                 for (int y = 0; y < stars.size(); y++) {//destination
-                    if (Calculation.starDistance(stars.get(x), stars.get(y)) <= Stars.maxRange && stars.get(x) != stars.get(y)) {
+                    if (Calculation.starDistance(stars.get(x), stars.get(y)) <= Star.maxRange && stars.get(x) != stars.get(y)) {
                         boolean pathIsVoid = true;
                         for (int scan = 0; scan < stars.get(x).getHyperSpaceLanes().size(); scan++) {
                             if (stars.get(x).getHyperSpaceLanes().get(scan).getOrigin() == stars.get(y) ||
@@ -127,10 +127,10 @@ public class Universe {
 
     private void addStars(int numStars){
         for (int x = 0;x < numStars;x++){
-            stars.add(new Stars(stars));
+            stars.add(new Star(stars));
         }
     }
-    public ArrayList<Stars> getStars() {
+    public ArrayList<Star> getStars() {
         return stars;
     }
 
@@ -160,7 +160,7 @@ public class Universe {
     public int getNumberOfSpaceStations(){
         int temp = 0;
         for (int x = 0;x < getNumberOfStars();x++){
-            for (int y = 0;y < stars.get(x).getSpacePorts().size();y++){
+            for (int y = 0; y < stars.get(x).getSpaceStation().size(); y++){
                 temp++;
             }
         }

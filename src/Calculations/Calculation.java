@@ -1,6 +1,6 @@
 package Calculations;
 
-import World.Galaxy.Star.Stars.Stars;
+import World.Galaxy.Star.Stars.Star;
 
 import java.util.ArrayList;
 
@@ -34,24 +34,24 @@ public class Calculation {
         }
         return -1;
     }
-    public static Stars closestStarToSentStar(Stars star,int starIndexInUniverse,ArrayList<Stars> stars){
+    public static Star closestStarToSentStar(Star star, int starIndexInUniverse, ArrayList<Star> stars){
         double closestStarDistance = starDistance(star,stars.get(0)) + 1;
-        Stars stars1 = stars.get(0);
+        Star star1 = stars.get(0);
         if (starIndexInUniverse == 0){
             closestStarDistance = starDistance(star,stars.get(1)) + 1;
-            stars1 = stars.get(1);
+            star1 = stars.get(1);
         }
         for (int x = 0;x < stars.size();x++){
             if (closestStarDistance > starDistance(star,stars.get(x)) && x != starIndexInUniverse){
                 closestStarDistance = starDistance(star,stars.get(x));
-                stars1 = stars.get(x);
+                star1 = stars.get(x);
             }
         }
-        return stars1;
+        return star1;
     }
-    public static double starDistance(Stars starsStart,Stars starsSecond){
-        return Math.sqrt(Math.abs((Math.pow(starsStart.getX() - starsSecond.getX(),2)) +
-                (Math.pow(starsStart.getY() - starsSecond.getY(),2)) +
-                (Math.pow(starsStart.getZ() - starsSecond.getZ(),2))));
+    public static double starDistance(Star starStart, Star starSecond){
+        return Math.sqrt(Math.abs((Math.pow(starStart.getX() - starSecond.getX(),2)) +
+                (Math.pow(starStart.getY() - starSecond.getY(),2)) +
+                (Math.pow(starStart.getZ() - starSecond.getZ(),2))));
     }
 }
