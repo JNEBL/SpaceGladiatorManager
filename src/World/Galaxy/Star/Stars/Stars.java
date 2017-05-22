@@ -2,7 +2,7 @@ package World.Galaxy.Star.Stars;
 
 import Calculations.Calculation;
 import World.Galaxy.Star.Planets.Planets.Planet;
-import World.Galaxy.Star.SpacePort.SpacePort;
+import World.Galaxy.Star.SpacePort.SpaceStation;
 import World.Galaxy.Travel.HyperSpaceLanes;
 
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Stars {
     private ArrayList<Planet> planets = new ArrayList<>();
-    private ArrayList<SpacePort> spacePorts = new ArrayList<>();
+    private ArrayList<SpaceStation> spacePorts = new ArrayList<>();
     private ArrayList<HyperSpaceLanes> hyperSpaceLanes = new ArrayList<>();
     private int x = 0,y = 0,z = 0;
     public static final int minRange = 500, maxRange = 2000;
@@ -71,7 +71,7 @@ public class Stars {
         return planets;
     }
 
-    public ArrayList<SpacePort> getSpacePorts() {
+    public ArrayList<SpaceStation> getSpacePorts() {
         return spacePorts;
     }
 
