@@ -6,6 +6,7 @@ package Player.Player;
         import World.Economics.Base.MonetaryCurrency;
         import World.Economics.DataBaseCurrencyGrabber.CurrencyDataBase;
         import World.Language.Base.Language;
+        import World.Tournament.Team;
 
         import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ package Player.Player;
  */
 public class Player {
     private ArrayList<MonetaryCurrency> currencies = new ArrayList<>();
-    private ArrayList<Gladiator> gladiators = new ArrayList<>();
+    private Team team;
     private ArrayList<Language> languages = new ArrayList<>();
     private Ship ship;
     public Player(){
@@ -30,17 +31,6 @@ public class Player {
         return currencies;
     }
 
-    public ArrayList<Gladiator> getGladiators() {
-        return gladiators;
-    }
-    public void addGladiator(Gladiator gladiator){
-        if (ship.getMaxGladiators() > gladiators.size())
-            gladiators.add(gladiator);
-    }
-    public void removeGladiator(int index){
-        if (index > -1)
-            gladiators.remove(index);
-    }
 
     public ArrayList<Language> getLanguages() {
         return languages;

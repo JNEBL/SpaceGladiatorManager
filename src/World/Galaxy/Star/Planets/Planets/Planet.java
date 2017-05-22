@@ -2,6 +2,7 @@ package World.Galaxy.Star.Planets.Planets;
 
 import World.Galaxy.Star.Planets.Moon.Moon;
 import World.Galaxy.Star.Stars.Star;
+import World.Tournament.Arena;
 
 import java.util.ArrayList;
 
@@ -11,15 +12,22 @@ import java.util.ArrayList;
 public class Planet {
     private int megaMileRadius;
     private ArrayList<Moon> moons = new ArrayList<>();
-    int distanceFromStar;
+    private int distanceFromStar;
+    private boolean hasArena;
+    private Arena arena;
     public Planet(Star star){
         megaMileRadius = (int)(Math.random()*40)+1;
         //max orbit from star is 1000000 megamiles;
         boolean validDistance = false;
         distanceFromStar = (int) (Math.random() * 900000 + 100000);
-
-
-
+        if (Math.random() < .1){
+            this.hasArena = true;
+            this.arena = new Arena();
+        }
+        else {
+            this.hasArena = false;
+            this.arena = null;
+        }
 
         //radius of earth is 4000 or 4 megamiles
         //unit to measure planet size could be megamiles which are 1000 miles per megamile (would allow really big planets without dealing with overflows)
@@ -34,6 +42,22 @@ public class Planet {
         for (int x = 0;x < Math.random() * megaMileRadius/3;x++){
             moons.add(new Moon(this));
         }
+    }
+
+    public int getDistanceFromStar() {
+        return distanceFromStar;
+    }
+
+    public int getMegaMileRadius() {
+        return megaMileRadius;
+    }
+
+    public Arena getArena() {
+        return arena;
+    }
+
+    public boolean isHasArena() {
+        return hasArena;
     }
 
     public ArrayList<Moon> getMoons() {

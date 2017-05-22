@@ -1,5 +1,6 @@
 package World.Galaxy.Travel;
 
+import Calculations.Calculation;
 import World.Galaxy.Star.Stars.Star;
 
 /**
@@ -7,9 +8,10 @@ import World.Galaxy.Star.Stars.Star;
  */
 public class HyperSpaceLanes {
     private Star destination, origin;
-    private int travelDistance;
+    private double travelDistance;
     public HyperSpaceLanes(Star origin, Star destination){
         this.origin = origin; this.destination = destination;
+        travelDistance = Calculation.starDistance(origin,destination);
 //        System.out.println("hyperspace lane created from: \n"+origin+"\nto: "+destination);
     }
 
@@ -19,10 +21,10 @@ public class HyperSpaceLanes {
     public Star getOrigin() {
         return origin;
     }
-    public int getTravelDistance() {
+    public double getTravelDistance() {
         return travelDistance;
     }
-    public void setTravelDistance(int travelDistance) {
+    public void setTravelDistance(double travelDistance) {
         this.travelDistance = travelDistance;
     }
 
