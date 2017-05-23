@@ -3,6 +3,7 @@ package Menus;
 import Calculations.Unigen;
 import GameFrameWork.Buttons.Button;
 import GameFrameWork.Buttons.ButtonNudge;
+import GameFrameWork.Window;
 import World.Galaxy.Universe.Universe;
 
 /**
@@ -14,6 +15,7 @@ public class MenuUniverseCreation extends Menu {
     public MenuUniverseCreation(){
         buttons.add(new Button(60,600,100,40,"Create Universe"));
         buttons.add(new ButtonNudge(60,200,100,40,"stars",50,1000,stars,50));
+        buttons.add(new Button(60,240,100,40,"View Universe"));
         //universe size
         //universe age?
         //difficulty
@@ -38,14 +40,17 @@ public class MenuUniverseCreation extends Menu {
                     System.out.println(Unigen.universe.getNumberOfPlanets()+" is the number of planets");
                     System.out.println(Unigen.universe.getNumberOfMoons()+" is the number of moons");
                     System.out.println(Unigen.universe.getNumberOfSpaceStations()+" is the number of space Stations");
-
-
-
                     break;
                 }
                 if (scan == 2) {
                     ButtonNudge button = (ButtonNudge) buttons.get(2);
                     stars = button.getCurrent();
+                    break;
+                }
+                if (scan == 3) {
+                    if(Unigen.universe != null){
+                        Window.setMenu(new MenuUniverseDisplay(this));
+                    }
                     break;
                 }
             }
