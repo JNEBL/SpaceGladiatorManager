@@ -1,5 +1,6 @@
 package World.Galaxy.Star.SpacePort;
 
+import Calculations.Unigen;
 import World.Galaxy.Star.Stars.Star;
 import World.Tournament.Arena;
 
@@ -21,6 +22,9 @@ public class SpaceStation {
         else {
             this.hasArena = false;
             this.arena = null;
+        }
+        if (Math.random() < .05){
+            Unigen.universe.getWormHolePortal().addSpaceStationLocation(this);
         }
     }
 
