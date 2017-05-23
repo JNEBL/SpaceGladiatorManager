@@ -13,7 +13,6 @@ public class Planet {
     private int megaMileRadius;
     private ArrayList<Moon> moons = new ArrayList<>();
     private int distanceFromStar;
-    private boolean hasArena;
     private Arena arena;
     public Planet(Star star){
         megaMileRadius = (int)(Math.random()*40)+1;
@@ -21,11 +20,9 @@ public class Planet {
         boolean validDistance = false;
         distanceFromStar = (int) (Math.random() * 9000 + 1000);
         if (Math.random() < .1){
-            this.hasArena = true;
             this.arena = new Arena();
         }
         else {
-            this.hasArena = false;
             this.arena = null;
         }
 
@@ -54,10 +51,6 @@ public class Planet {
 
     public Arena getArena() {
         return arena;
-    }
-
-    public boolean isHasArena() {
-        return hasArena;
     }
 
     public ArrayList<Moon> getMoons() {

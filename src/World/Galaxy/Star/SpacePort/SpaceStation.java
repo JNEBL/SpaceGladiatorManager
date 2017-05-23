@@ -12,7 +12,6 @@ public class SpaceStation {
     private int distanceFromStar;
     private boolean hasArena;
     private Arena arena;
-    private boolean hasWormHole;
     public SpaceStation(Star star){
         this.star = star;
         distanceFromStar = (int) (Math.random() * 900000 + 100000);
@@ -25,11 +24,8 @@ public class SpaceStation {
             this.arena = null;
         }
         if (Math.random() < .05){
-            this.hasWormHole = true;
             Unigen.universe.getWormHolePortal().addSpaceStationLocation(this);
         }
-        else
-            this.hasWormHole = false;
     }
 
     public int getDistanceFromStar() {

@@ -9,18 +9,15 @@ import World.Tournament.Arena;
 public class Moon {
     private Planet planet;
     private int distanceFromPlanet;
-    private boolean hasArena;
     private Arena arena;
     String moonType; //rock or ice
     public Moon(Planet planet){
         this.planet = planet;
         distanceFromPlanet = (int) (Math.random() * 500 + 100);
         if (Math.random() < .1){
-            this.hasArena = true;
             this.arena = new Arena();
         }
         else {
-            this.hasArena = false;
             this.arena = null;
         }
         if(planet.getDistanceFromStar()>500 && Math.random() > .65) moonType = "ice";
@@ -33,10 +30,6 @@ public class Moon {
 
     public Arena getArena() {
         return arena;
-    }
-
-    public boolean isHasArena() {
-        return hasArena;
     }
 
     public Planet getPlanet() {
