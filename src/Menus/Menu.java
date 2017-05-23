@@ -1,7 +1,7 @@
 package Menus;
 
-import GameFrameWork.*;
 import GameFrameWork.Buttons.Button;
+import GameFrameWork.PanelTextBox;
 import GameFrameWork.Window;
 
 import java.awt.*;
@@ -20,7 +20,7 @@ public abstract class Menu {
     }
     public void displayAll(){
         displayButtons();
-        displayComponents();
+        displayPanels();
     }
     public void displayButtons(){
         Window.window.getGraphics().setColor(Color.white);
@@ -70,7 +70,7 @@ public abstract class Menu {
 //    }
 //}
 
-    public void displayComponents(){
+    public void displayPanels(){
         for(int scan = 0; scan < panels.size(); scan++){
             panels.get(scan).display();
         }

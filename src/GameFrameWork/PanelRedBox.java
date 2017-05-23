@@ -9,12 +9,13 @@ import java.awt.*;
  */
 public class PanelRedBox extends Panel {
     private String side = "front";
-    public PanelRedBox(int x, int y, int xDimension, int yDimension){
+    private double megamileToPixelRatio;
+    public PanelRedBox(int x, int y, int xDimension, int yDimension, double megamileToPixelRatio){
         super(x,y,xDimension,yDimension);
         buttons.add(new Button(x,y+yDimension-yDimension/8,xDimension/3,yDimension/8,"front"));
         buttons.add(new Button(x+xDimension/3,y+yDimension-yDimension/8,xDimension/3,yDimension/8,"side"));
         buttons.add(new Button(x+2*(xDimension/3),y+yDimension-yDimension/8,xDimension/3,yDimension/8,"top"));
-
+        this.megamileToPixelRatio = megamileToPixelRatio;
     }
     public void questionPressed() { //this is a template. an if scan== x is needed per button
         for (int scan = 1; scan < buttons.size(); scan++) {

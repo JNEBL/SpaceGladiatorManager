@@ -13,6 +13,7 @@ public class Window extends JFrame{
     public static Window window;
     public static boolean holdingMouse = true;
     private static Menu menu = new MenuBootScreen();
+    public int x = 1280, y = 720;
     public Window(){
         super("GenericGame");
         setSize(1280,720);
@@ -25,9 +26,9 @@ public class Window extends JFrame{
         menu.displayAll();
     }
 
-    public void setMenu(Menu menu){
+    public static void setMenu(Menu menu){
         Window.menu = menu;
-        refreshDisplay();
+        window.refreshDisplay();
     }
     public static Menu getMenu(){
         return menu;
