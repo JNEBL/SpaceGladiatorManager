@@ -35,7 +35,7 @@ public abstract class Panel {
         Graphics g = GameFrameWork.Window.window.getGraphics();
         g.setColor(Color.darkGray);
         g.fillRect(x,y,xDimension,yDimension);
-        
+
     }
     private void displayButtons(){
         if(menu.equals( Window.getMenu()))
