@@ -42,18 +42,24 @@ public class PanelUniverseDisplay extends Panel {
         if(side.equals("front")){
             for(int scan = 0; Unigen.universe.getStars().size() > scan; scan++){
                 g.setColor(Unigen.universe.getStars().get(scan).color);
+                if(Unigen.universe.getStars().get(scan).getSpaceStation().size()!=0)
+                    g.drawOval((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),7,7);
                 g.fillRect((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),2,2);
             }
         }
         if(side.equals("side")){
             for(int scan = 0; Unigen.universe.getStars().size() > scan; scan++){
                 g.setColor(Unigen.universe.getStars().get(scan).color);
+                if(Unigen.universe.getStars().get(scan).getSpaceStation().size()!=0)
+                    g.drawOval((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),7,7);
                 g.fillRect((int)(Unigen.universe.getStars().get(scan).getZ()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),2,2);
             }
         }
         if(side.equals("top")){
             for(int scan = 0; Unigen.universe.getStars().size() > scan; scan++){
                 g.setColor(Unigen.universe.getStars().get(scan).color);
+                if(Unigen.universe.getStars().get(scan).getSpaceStation().size()!=0)
+                    g.drawOval((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),7,7);
                 g.fillRect((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getZ()/megamileToPixelRatio+yDimension/3*2),2,2);
             }
         }
