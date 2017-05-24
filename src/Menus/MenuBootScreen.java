@@ -19,7 +19,7 @@ public class MenuBootScreen extends Menu{
         for (int scan = 1; scan < buttons.size(); scan++){
             if(buttons.get(scan).clicked){
                 if(scan == 1){
-                    Window.window.setMenu(new MenuGameCreation());
+                    Window.setMenu(new MenuGameCreation());
                     break;
                 }
                 if(scan == 2) {
@@ -27,7 +27,7 @@ public class MenuBootScreen extends Menu{
                     System.exit(0);
                 }
                 if(scan == 3){
-                    Window.window.setMenu(new MenuCredits());
+                    Window.setMenu(new MenuCredits());
                     break;
                 }
             }

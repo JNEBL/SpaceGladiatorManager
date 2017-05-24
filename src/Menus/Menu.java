@@ -19,13 +19,15 @@ public abstract class Menu {
         buttons.add(new Button(0,0,0,0,""));
     }
     public void displayAll(){
+        Window.window.paint(Window.window.getGraphics());
+        Window.window.getGraphics().setColor(Color.black);
+        Window.window.getGraphics().fillRect(0,0,1280,720);
+        System.out.println("the number of panels is: "+panels.size());
         displayButtons();
         displayPanels();
     }
     public void displayButtons(){
         Window.window.getGraphics().setColor(Color.white);
-        Window.window.getGraphics().fillRect(0,0,1280,720);
-        Window.window.getGraphics().setColor(Color.black);
         for (int scan = 0; scan < buttons.size(); scan++)
             buttons.get(scan).displayButton();
     }

@@ -13,7 +13,6 @@ public class PanelTextBox extends Panel {
     public PanelTextBox(int x, int y, int xDimension, int yDimension,String text, Menus.Menu menu){
         super(x,y,xDimension,yDimension,menu);
         this.text = text+" ";
-        display();
     }
     public void questionPressed(){
 

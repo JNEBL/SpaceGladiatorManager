@@ -20,7 +20,6 @@ public class MenuUniverseDisplay extends Menu{
         if(Unigen.universe.yDimension/Window.window.y < megamileToPixelRatio)megamileToPixelRatio = Unigen.universe.xDimension/Window.window.y;
         if(Unigen.universe.zDimension/Window.window.y < megamileToPixelRatio)megamileToPixelRatio = Unigen.universe.zDimension/Window.window.y;
         panels.add(new PanelUniverseDisplay(25,100,Window.window.x-30,Window.window.y-250,this,megamileToPixelRatio));
-        displayAll();
     }
     public void questionPressed(){
         for (int scan = 1; scan < buttons.size(); scan++) {

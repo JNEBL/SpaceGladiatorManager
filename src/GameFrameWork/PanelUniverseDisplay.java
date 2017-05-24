@@ -14,7 +14,6 @@ public class PanelUniverseDisplay extends Panel {
         buttons.add(new Button(x+xDimension/3,y+yDimension-yDimension/8,xDimension/3,yDimension/8,"side"));
         buttons.add(new Button(x+2*(xDimension/3),y+yDimension-yDimension/8,xDimension/3,yDimension/8,"top"));
         this.megamileToPixelRatio = megamileToPixelRatio*2;
-        System.out.println(megamileToPixelRatio+" megamiles per pixel");
     }
     public void questionPressed() { //this is a template. an if scan== x is needed per button
         for (int scan = 1; scan < buttons.size(); scan++) {
