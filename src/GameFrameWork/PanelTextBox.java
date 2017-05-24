@@ -1,5 +1,7 @@
 package GameFrameWork;
 
+import Menus.*;
+
 import java.awt.*;
 
 /**
@@ -8,8 +10,8 @@ import java.awt.*;
 public class PanelTextBox extends Panel {
 
     String text;
-    public PanelTextBox(int x, int y, int xDimension, int yDimension,String text){
-        super(x,y,xDimension,yDimension);
+    public PanelTextBox(int x, int y, int xDimension, int yDimension,String text, Menus.Menu menu){
+        super(x,y,xDimension,yDimension,menu);
         this.text = text+" ";
     }
     public void questionPressed(){

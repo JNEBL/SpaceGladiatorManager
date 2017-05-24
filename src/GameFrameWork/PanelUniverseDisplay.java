@@ -1,5 +1,6 @@
 package GameFrameWork;
 
+import Calculations.Unigen;
 import GameFrameWork.Buttons.Button;
 
 import java.awt.*;
@@ -7,10 +8,10 @@ import java.awt.*;
 /**
  * Created by citim on 5/19/2017.
  */
-public class PanelRedBox extends Panel {
+public class PanelUniverseDisplay extends Panel {
     private String side = "front";
     private double megamileToPixelRatio;
-    public PanelRedBox(int x, int y, int xDimension, int yDimension,Menus.Menu menu, double megamileToPixelRatio){
+    public PanelUniverseDisplay(int x, int y, int xDimension, int yDimension,Menus.Menu menu, double megamileToPixelRatio){
         super(x,y,xDimension,yDimension,menu);
         buttons.add(new Button(x,y+yDimension-yDimension/8,xDimension/3,yDimension/8,"front"));
         buttons.add(new Button(x+xDimension/3,y+yDimension-yDimension/8,xDimension/3,yDimension/8,"side"));
@@ -38,8 +39,9 @@ public class PanelRedBox extends Panel {
     public void displayComponent(){
         Graphics g = Window.window.getGraphics();
         if(side.equals("front")){
-            g.setColor(Color.red);
-            g.fillRect(x+5,y+5,xDimension-5,yDimension-yDimension/4);
+            for(int scan = 0; Unigen.universe.getStars().size() > scan; scan++){
+                g.fillRect((int)(Unigen.universe.getStars().get(scan).getX()*megamileToPixelRatio),(int)(Unigen.universe.getStars().get(scan).getY()*megamileToPixelRatio),2,2);
+            }
         }
         if(side.equals("side")){
             g.setColor(Color.blue);

@@ -23,6 +23,7 @@ public class Window extends JFrame{
         window = this;
     }
     public void refreshDisplay(){
+        getGraphics().fillRect(0,0,x,y);
         menu.displayAll();
     }
 

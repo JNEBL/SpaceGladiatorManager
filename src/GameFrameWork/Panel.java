@@ -1,8 +1,10 @@
 package GameFrameWork;
 
 import GameFrameWork.Buttons.Button;
+import Menus.*;
 
 import java.awt.*;
+import java.awt.Menu;
 import java.util.ArrayList;
 
 import static GameFrameWork.Window.*;
@@ -13,13 +15,15 @@ import static GameFrameWork.Window.*;
 public abstract class Panel {
     ArrayList<Button> buttons = new ArrayList<>();
     public int x, y, xDimension, yDimension;
+    Menus.Menu menu;
 
-    public Panel(int x, int y, int xDimension, int yDimension){
+    public Panel(int x, int y, int xDimension, int yDimension, Menus.Menu menu){
         this.x = x;
         this.y = y;
         this.xDimension = xDimension;
         this.yDimension = yDimension;
         buttons.add(new Button(0,0,0,0,""));
+        this.menu = menu;
     }
 
     public void display(){
@@ -32,6 +36,7 @@ public abstract class Panel {
         Window.window.getGraphics().fillRect(x,y,xDimension,yDimension);
     }
     private void displayButtons(){
+        if(menu.equals( Window.getMenu()))
         for(int scan = 0; scan < buttons.size(); scan++){
             buttons.get(scan).displayButton();
         }

@@ -20,6 +20,7 @@ public abstract class Menu {
     }
     public void displayAll(){
         displayButtons();
+        System.out.println(panels.size());
         displayPanels();
     }
     public void displayButtons(){
@@ -29,10 +30,6 @@ public abstract class Menu {
         for (int scan = 0; scan < buttons.size(); scan++)
             buttons.get(scan).displayButton();
     }
-    //    public void displayButtons(ArrayList<Button> buttons){
-//        for (int scan = 0; scan < buttons.size(); scan++)
-//            buttons.get(scan).displayButton();
-//    }
     public void voidButtons(Button button){
         for (int scan = 0;buttons.size() > scan; scan++){
             if(buttons.get(scan) == button){
@@ -45,6 +42,10 @@ public abstract class Menu {
         for(int scan = 0; scan < buttons.size(); scan++){
             voidButtons(buttons.get(scan));
         }
+    }
+    public void voidButtons(){
+        buttons = new ArrayList<>();
+        buttons.add(new Button(0,0,0,0,""));
     }
     public void questionButtons(){ //questions for menu buttons first, then component buttons
 
