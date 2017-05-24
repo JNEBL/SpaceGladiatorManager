@@ -5,6 +5,7 @@ import World.Galaxy.Star.Planets.Planets.Planet;
 import World.Galaxy.Star.SpacePort.SpaceStation;
 import World.Galaxy.Travel.HyperSpaceLanes;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class Star {
@@ -12,8 +13,8 @@ public class Star {
     private ArrayList<SpaceStation> spaceStations = new ArrayList<>();
     private ArrayList<HyperSpaceLanes> hyperSpaceLanes = new ArrayList<>();
     private int x = 0,y = 0,z = 0;
-    String color;
-    public static final int minRange = 500, maxRange = 2000;
+    public Color color;
+    public static final int minRange = 500, maxRange = 3000;
     private int[] location = new int[3];
     public Star(ArrayList<Star> starAlreadyGenerated){
         //start location generation!
@@ -36,7 +37,7 @@ public class Star {
             inBounds = true;
         }
         //end location generation!
-        color = (String)Calculation.Selector(new Object[] {"yellow","red","blue","white","orange"});
+        color = (Color)Calculation.Selector(new Object[] {Color.yellow,Color.red,Color.blue,Color.white,Color.orange});
         if(Math.random()<.05) spaceStations.add(new SpaceStation(this));
         //start planet generation!
         int planets = (int)(Math.random()*11);

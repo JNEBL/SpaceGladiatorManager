@@ -16,7 +16,8 @@ public class PanelUniverseDisplay extends Panel {
         buttons.add(new Button(x,y+yDimension-yDimension/8,xDimension/3,yDimension/8,"front"));
         buttons.add(new Button(x+xDimension/3,y+yDimension-yDimension/8,xDimension/3,yDimension/8,"side"));
         buttons.add(new Button(x+2*(xDimension/3),y+yDimension-yDimension/8,xDimension/3,yDimension/8,"top"));
-        this.megamileToPixelRatio = megamileToPixelRatio;
+        this.megamileToPixelRatio = megamileToPixelRatio*2;
+        System.out.println(megamileToPixelRatio);
     }
     public void questionPressed() { //this is a template. an if scan== x is needed per button
         for (int scan = 1; scan < buttons.size(); scan++) {
@@ -40,16 +41,21 @@ public class PanelUniverseDisplay extends Panel {
         Graphics g = Window.window.getGraphics();
         if(side.equals("front")){
             for(int scan = 0; Unigen.universe.getStars().size() > scan; scan++){
-                g.fillRect((int)(Unigen.universe.getStars().get(scan).getX()*megamileToPixelRatio),(int)(Unigen.universe.getStars().get(scan).getY()*megamileToPixelRatio),2,2);
+                g.setColor(Unigen.universe.getStars().get(scan).color);
+                g.fillRect((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),2,2);
             }
         }
         if(side.equals("side")){
-            g.setColor(Color.blue);
-            g.fillRect(x+5,y+5,xDimension-5,yDimension-yDimension/4);
+            for(int scan = 0; Unigen.universe.getStars().size() > scan; scan++){
+                g.setColor(Unigen.universe.getStars().get(scan).color);
+                g.fillRect((int)(Unigen.universe.getStars().get(scan).getZ()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),2,2);
+            }
         }
         if(side.equals("top")){
-            g.setColor(Color.white);
-            g.fillRect(x+5,y+5,xDimension-5,yDimension-yDimension/4);
+            for(int scan = 0; Unigen.universe.getStars().size() > scan; scan++){
+                g.setColor(Unigen.universe.getStars().get(scan).color);
+                g.fillRect((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getZ()/megamileToPixelRatio+yDimension/3*2),2,2);
+            }
         }
     }
 }
