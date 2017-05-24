@@ -24,7 +24,6 @@ public class SpaceStation {
             this.arena = null;
         }
         if (Math.random() < .25){
-            System.out.println(Unigen.universe);
             Unigen.universe.addWormhole(this);
         }
     }

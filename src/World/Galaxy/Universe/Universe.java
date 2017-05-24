@@ -144,7 +144,6 @@ public class Universe {
     }
     public void addWormhole(SpaceStation spaceStation){
         wormHoles.add(new WormHole(spaceStation));
-        System.out.println(wormHoles.size());
     }
     public int getNumberOfStars(){
         return stars.size();

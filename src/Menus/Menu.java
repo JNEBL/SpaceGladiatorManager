@@ -20,7 +20,6 @@ public abstract class Menu {
     }
     public void displayAll(){
         displayButtons();
-        System.out.println(panels.size());
         displayPanels();
     }
     public void displayButtons(){
