@@ -14,7 +14,7 @@ public class MenuUniverseCreation extends Menu {
     private int stars = 50;
     public MenuUniverseCreation(){
         buttons.add(new Button(60,600,100,40,"Create Universe"));
-        buttons.add(new ButtonNudge(60,200,100,40,"stars",50,1000,stars,50));
+        buttons.add(new ButtonNudge(60,200,100,40,"stars",50,100000,stars,50));
         buttons.add(new Button(60,240,100,40,"View Universe"));
         //universe size
         //universe age?
