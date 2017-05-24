@@ -3,6 +3,7 @@ package Menus;
 import Calculations.Unigen;
 import GameFrameWork.Buttons.Button;
 import GameFrameWork.PanelRedBox;
+import GameFrameWork.PanelTextBox;
 import GameFrameWork.Window;
 
 /**
@@ -17,7 +18,7 @@ public class MenuUniverseDisplay extends Menu{
         megamileToPixelRatio = Unigen.universe.xDimension/Window.window.y;
         if(Unigen.universe.yDimension/Window.window.y < megamileToPixelRatio)megamileToPixelRatio = Unigen.universe.xDimension/Window.window.y;
         if(Unigen.universe.zDimension/Window.window.y < megamileToPixelRatio)megamileToPixelRatio = Unigen.universe.zDimension/Window.window.y;
-        panels.add(new PanelRedBox(0,0,Window.window.getX()-5,Window.window.getY()-100,megamileToPixelRatio));
+        panels.add(new PanelRedBox(25,100,Window.window.x-30,Window.window.y-250,megamileToPixelRatio));
         displayAll();
     }
     public void questionPressed(){

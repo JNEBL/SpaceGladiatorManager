@@ -28,9 +28,8 @@ public abstract class Panel {
         displayComponent();
     }
     private void displayFrame(){
-        Graphics g = Window.window.getGraphics();
-        g.setColor(Color.darkGray);
-        g.fillRect(x,y,xDimension,yDimension);
+        Window.window.getGraphics().setColor(Color.darkGray);
+        Window.window.getGraphics().fillRect(x,y,xDimension,yDimension);
     }
     private void displayButtons(){
         for(int scan = 0; scan < buttons.size(); scan++){

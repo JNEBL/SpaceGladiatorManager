@@ -39,15 +39,15 @@ public class PanelRedBox extends Panel {
         Graphics g = Window.window.getGraphics();
         if(side.equals("front")){
             g.setColor(Color.red);
-            g.fillRect(x+5,y+5,xDimension-xDimension/8-5,yDimension-yDimension/4);
+            g.fillRect(x+5,y+5,xDimension-5,yDimension-yDimension/4);
         }
         if(side.equals("side")){
             g.setColor(Color.blue);
-            g.fillRect(x+5,y+5,xDimension-xDimension/8-5,yDimension-yDimension/4);
+            g.fillRect(x+5,y+5,xDimension-5,yDimension-yDimension/4);
         }
         if(side.equals("top")){
             g.setColor(Color.white);
-            g.fillRect(x+5,y+5,xDimension-xDimension/8-5,yDimension-yDimension/4);
+            g.fillRect(x+5,y+5,xDimension-5,yDimension-yDimension/4);
         }
     }
 }
