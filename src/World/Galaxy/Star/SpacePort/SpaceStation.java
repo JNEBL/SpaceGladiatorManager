@@ -23,8 +23,9 @@ public class SpaceStation {
             this.hasArena = false;
             this.arena = null;
         }
-        if (Math.random() < .05){
-            Unigen.universe.getWormHolePortal().addSpaceStationLocation(this);
+        if (Math.random() < .25){
+            System.out.println(Unigen.universe);
+            Unigen.universe.addWormhole(this);
         }
     }
 

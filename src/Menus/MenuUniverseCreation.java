@@ -40,6 +40,10 @@ public class MenuUniverseCreation extends Menu {
                     System.out.println(Unigen.universe.getNumberOfPlanets()+" is the number of planets");
                     System.out.println(Unigen.universe.getNumberOfMoons()+" is the number of moons");
                     System.out.println(Unigen.universe.getNumberOfSpaceStations()+" is the number of space Stations");
+                    System.out.println(Unigen.universe.getNumberOfWormHoles()+" is the number of wormholes");
+
+
+
                     break;
                 }
                 if (scan == 2) {
@@ -51,6 +55,7 @@ public class MenuUniverseCreation extends Menu {
                     if(Unigen.universe != null){
                         Window.setMenu(new MenuUniverseDisplay(this));
                     }
+                    else System.out.println("oh no");
                     break;
                 }
             }

@@ -7,9 +7,6 @@ import World.Galaxy.Travel.HyperSpaceLanes;
 
 import java.util.ArrayList;
 
-/**
- * Created by student5 on 5/11/17.
- */
 public class Star {
     private ArrayList<Planet> planets = new ArrayList<>();
     private ArrayList<SpaceStation> spaceStations = new ArrayList<>();

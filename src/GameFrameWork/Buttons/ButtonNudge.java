@@ -16,6 +16,9 @@ public class ButtonNudge extends Button {
         this.nudgeBy = nudgeBy;
     }
     public void questionClicked(){
+        clicked = false;
+        left.clicked = false;
+        right.clicked = false;
         left.questionClicked();
         right.questionClicked();
         if (left.clicked&&current-nudgeBy >= min){

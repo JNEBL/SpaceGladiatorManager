@@ -1,9 +1,10 @@
 package World.Galaxy.Universe;
 
 import Calculations.Calculation;
+import World.Galaxy.Star.SpacePort.SpaceStation;
 import World.Galaxy.Star.Stars.Star;
 import World.Galaxy.Travel.HyperSpaceLanes;
-import World.Galaxy.Travel.WormHolePortal;
+import World.Galaxy.Travel.WormHole;
 
 import java.util.ArrayList;
 
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 public class Universe {
     private ArrayList<Star> stars = new ArrayList<>();
     private int galaxyAttempts = 1;
-    private WormHolePortal wormHolePortal = new WormHolePortal();
+    private ArrayList<WormHole> wormHoles = new ArrayList<>();
     public int xEnd = 0, yEnd = 0,zEnd = 0, xStart = 0, yStart = 0, zStart = 0, xDimension, yDimension, zDimension;
     public Universe(int numStars){
         addStars(numStars);
@@ -136,6 +137,13 @@ public class Universe {
         return stars;
     }
 
+    public int getNumberOfWormHoles(){
+        return wormHoles.size();
+    }
+    public void addWormhole(SpaceStation spaceStation){
+        wormHoles.add(new WormHole(spaceStation));
+        System.out.println(wormHoles.size());
+    }
     public int getNumberOfStars(){
         return stars.size();
     }
@@ -177,11 +185,6 @@ public class Universe {
         }
         return temp;
     }
-
-    public WormHolePortal getWormHolePortal() {
-        return wormHolePortal;
-    }
-
     public int getGalaxyAttempts() {
         return galaxyAttempts;
     }
