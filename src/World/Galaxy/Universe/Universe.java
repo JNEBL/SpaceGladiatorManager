@@ -1,6 +1,7 @@
 package World.Galaxy.Universe;
 
 import Calculations.Calculation;
+import Calculations.Unigen;
 import World.Galaxy.Star.SpacePort.SpaceStation;
 import World.Galaxy.Star.Stars.Star;
 import World.Galaxy.Travel.HyperSpaceLanes;
@@ -17,6 +18,7 @@ public class Universe {
     private ArrayList<WormHole> wormHoles = new ArrayList<>();
     public int xEnd = 0, yEnd = 0,zEnd = 0, xStart = 0, yStart = 0, zStart = 0, xDimension, yDimension, zDimension;
     public Universe(int numStars){
+        Unigen.universe = this;
         addStars(numStars);
         setGalacticHyperSpaceLanes();
         findUniverseBounds();
