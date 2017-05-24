@@ -20,7 +20,8 @@ public class PanelTextBox extends Panel {
     public void displayComponent(){
         int xPosition = x+10, yPosition = y+25;
 
-        //for length of text. find spaces that you can use to go to the next line once over a char limit. print these lines on a board
+        //for length of text. find spaces that you can use to go to the next line once over a char limit.
+        // print these lines on a board
         for(int scan = 0; scan < text.length(); scan++){
             boolean newLineNeeded = false;
             if (xPosition > xDimension-10) newLineNeeded = true;
@@ -30,7 +31,9 @@ public class PanelTextBox extends Panel {
             }
             else {
                 Window.window.getGraphics().drawString(text.substring(scan,scan+1),xPosition,yPosition);
-                if(text.substring(scan,scan+1).equals("i")||text.substring(scan,scan+1).equals("t")||text.substring(scan,scan+1).equals("l")||text.substring(scan,scan+1).equals("r")||text.substring(scan,scan+1).equals("f")||text.substring(scan,scan+1).equals("j"))
+                if(text.substring(scan,scan+1).equals("i")||text.substring(scan,scan+1).equals("t")||
+                        text.substring(scan,scan+1).equals("l")||text.substring(scan,scan+1).equals("r")||
+                        text.substring(scan,scan+1).equals("f")||text.substring(scan,scan+1).equals("j"))
                 xPosition+=4;
                 else if(text.substring(scan,scan+1).equals("m")||text.substring(scan,scan+1).equals("w"))
                     xPosition+=10;
