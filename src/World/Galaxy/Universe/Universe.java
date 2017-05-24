@@ -9,14 +9,12 @@ import World.Galaxy.Travel.WormHole;
 
 import java.util.ArrayList;
 
-/**
- * Created by student5 on 5/11/17.
- */
 public class Universe {
     private ArrayList<Star> stars = new ArrayList<>();
     private int galaxyAttempts = 1;
     private ArrayList<WormHole> wormHoles = new ArrayList<>();
-    public int xEnd = 0, yEnd = 0,zEnd = 0, xStart = 0, yStart = 0, zStart = 0, xDimension, yDimension, zDimension;
+    private int xEnd = 0, yEnd = 0,zEnd = 0, xStart = 0, yStart = 0, zStart = 0;
+    public int xDimension, yDimension, zDimension;
     public Universe(int numStars){
         Unigen.universe = this;
         addStars(numStars);
@@ -60,6 +58,7 @@ public class Universe {
                 yDimension = yStart*(-1)+yEnd;
                 zDimension = zStart*(-1)+zEnd;
             }
+
     }
 
 //                if (Calculation.starDistance(stars.get(x),stars.get(y)) < numStars * .1 && x != y){
