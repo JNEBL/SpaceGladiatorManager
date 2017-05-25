@@ -11,8 +11,10 @@ public class PanelUniverseDisplay extends Panel {
     public PanelUniverseDisplay(int x, int y, int xDimension, int yDimension,Menus.Menu menu, double megamileToPixelRatio){
         super(x,y,xDimension,yDimension,menu);
         buttons.add(new Button(x,y+yDimension-yDimension/8,xDimension/3,yDimension/8,"front"));
-        buttons.add(new Button(x+xDimension/3,y+yDimension-yDimension/8,xDimension/3,yDimension/8,"side"));
-        buttons.add(new Button(x+2*(xDimension/3),y+yDimension-yDimension/8,xDimension/3,yDimension/8,"top"));
+        buttons.add(new Button(x+xDimension/3,y+yDimension-yDimension/8,xDimension/3,
+                yDimension/8,"side"));
+        buttons.add(new Button(x+2*(xDimension/3),y+yDimension-yDimension/8,
+                xDimension/3,yDimension/8,"top"));
         this.megamileToPixelRatio = megamileToPixelRatio*2;
     }
     public void questionPressed() { //this is a template. an if scan== x is needed per button
@@ -44,30 +46,48 @@ public class PanelUniverseDisplay extends Panel {
             for(int scan = 0; Unigen.universe.getStars().size() > scan; scan++){
                 g.setColor(Unigen.universe.getStars().get(scan).color);
                 if(Unigen.universe.getStars().get(scan).getSpaceStation().size()!=0)
-                    g.drawOval((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),7,7);
+                    g.drawOval((int)(Unigen.universe.getStars().get(scan).getX()
+                            /megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()
+                            /megamileToPixelRatio+yDimension/3*2),7,7);
                 if(Unigen.universe.getStars().get(scan).hasWormHole())
-                    g.fillOval((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),7,7);
-                g.fillRect((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),2,2);
+                    g.fillOval((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),
+                            (int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),
+                            7,7);
+                g.fillRect((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),
+                        (int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),
+                        2,2);
             }
         }
         if(side.equals("side")){
             for(int scan = 0; Unigen.universe.getStars().size() > scan; scan++){
                 g.setColor(Unigen.universe.getStars().get(scan).color);
                 if(Unigen.universe.getStars().get(scan).getSpaceStation().size()!=0)
-                    g.drawOval((int)(Unigen.universe.getStars().get(scan).getZ()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),7,7);
+                    g.drawOval((int)(Unigen.universe.getStars().get(scan).getZ()/
+                            megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/
+                            megamileToPixelRatio+yDimension/3*2),7,7);
                 if(Unigen.universe.getStars().get(scan).hasWormHole())
-                    g.fillOval((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),7,7);
-                g.fillRect((int)(Unigen.universe.getStars().get(scan).getZ()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),2,2);
+                    g.fillOval((int)(Unigen.universe.getStars().get(scan).getX()/
+                            megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/
+                            megamileToPixelRatio+yDimension/3*2),7,7);
+                g.fillRect((int)(Unigen.universe.getStars().get(scan).getZ()/
+                        megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/
+                        megamileToPixelRatio+yDimension/3*2),2,2);
             }
         }
         if(side.equals("top")){
             for(int scan = 0; Unigen.universe.getStars().size() > scan; scan++){
                 g.setColor(Unigen.universe.getStars().get(scan).color);
                 if(Unigen.universe.getStars().get(scan).getSpaceStation().size()!=0)
-                    g.drawOval((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getZ()/megamileToPixelRatio+yDimension/3*2),7,7);
+                    g.drawOval((int)(Unigen.universe.getStars().get(scan).getX()/
+                            megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getZ()/
+                            megamileToPixelRatio+yDimension/3*2),7,7);
                 if(Unigen.universe.getStars().get(scan).hasWormHole())
-                    g.fillOval((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/megamileToPixelRatio+yDimension/3*2),7,7);
-                g.fillRect((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getZ()/megamileToPixelRatio+yDimension/3*2),2,2);
+                    g.fillOval((int)(Unigen.universe.getStars().get(scan).getX()/
+                            megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()/
+                            megamileToPixelRatio+yDimension/3*2),7,7);
+                g.fillRect((int)(Unigen.universe.getStars().get(scan).getX()/
+                        megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getZ()/
+                        megamileToPixelRatio+yDimension/3*2),2,2);
             }
         }
     }
