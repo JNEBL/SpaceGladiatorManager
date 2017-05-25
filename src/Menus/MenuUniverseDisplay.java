@@ -17,7 +17,7 @@ public class MenuUniverseDisplay extends Menu{
     private double megamileToPixelRatio;
     public MenuUniverseDisplay(Menu previousMenu){
         this.previousMenu = previousMenu;
-        buttons.add(new Button(60,600,100,25,"back"));
+        buttons.add(new Button(60,600,100,40,"back"));
         megamileToPixelRatio = Unigen.universe.xDimension/Window.window.y;
         if(Unigen.universe.yDimension/Window.window.y < megamileToPixelRatio)megamileToPixelRatio = Unigen.universe.xDimension/Window.window.y;
         if(Unigen.universe.zDimension/Window.window.y < megamileToPixelRatio)megamileToPixelRatio = Unigen.universe.zDimension/Window.window.y;

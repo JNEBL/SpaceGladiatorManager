@@ -15,11 +15,11 @@ public class MenuUniverseCreation extends Menu {
 
     private int stars = 10000;
     public MenuUniverseCreation(){
-        buttons.add(new Button(60,600,100,40,"Create Universe"));
+        buttons.add(new Button(60,320,100,40,"Create Universe"));
         buttons.add(new ButtonNudge(60,200,100,40,"stars",100,50000,stars,100));
         buttons.add(new Button(60,280,100,40,"View Universe"));
         buttons.add(new ButtonDropDown(60,240,100,40,"universe type",new String[] {"central mass","spiral"}));
-
+        buttons.add(new Button(60,600,100,40,"back"));
         //universe size
         //universe age?
         //difficulty
@@ -61,8 +61,8 @@ public class MenuUniverseCreation extends Menu {
                     else System.out.println("universe cannot display without generation!");
                     break;
                 }
-                if (scan == 2) {
-                    displayAll();
+                if (scan == 5) {
+                    Window.setMenu(new MenuGameCreation());
                     break;
                 }
             }

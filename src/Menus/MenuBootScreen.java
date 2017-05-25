@@ -11,9 +11,9 @@ import GameFrameWork.Window;
 public class MenuBootScreen extends Menu{
     public MenuBootScreen(){
         super();
-        buttons.add(new Button(80,200,100,40,"Start"));
-        buttons.add(new Button(80,320,100,40,"Quit"));
-        buttons.add(new Button(80,240,100,40,"Credits"));
+        buttons.add(new Button(60,200,100,40,"Start"));
+        buttons.add(new Button(60,600,100,40,"Quit"));
+        buttons.add(new Button(60,560,100,40,"Credits"));
     }
     public void questionPressed(){
         for (int scan = 1; scan < buttons.size(); scan++){

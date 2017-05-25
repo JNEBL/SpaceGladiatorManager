@@ -9,8 +9,8 @@ import GameFrameWork.Window;
 public class MenuGameCreation extends Menu {
 
     public MenuGameCreation(){
-        buttons.add(new Button(80,200,100,40,"Create Universe"));
-        buttons.add(new Button(80,240,100,40,"Back"));
+        buttons.add(new Button(60,200,100,40,"Create Universe"));
+        buttons.add(new Button(60,600,100,40,"Back"));
     }
     public void questionPressed(){
         for (int scan = 1; scan < buttons.size(); scan++) {
