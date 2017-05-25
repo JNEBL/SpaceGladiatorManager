@@ -13,6 +13,7 @@ public class Star {
     private ArrayList<SpaceStation> spaceStations = new ArrayList<>();
     private ArrayList<HyperSpaceLanes> hyperSpaceLanes = new ArrayList<>();
     private int x = 0,y = 0,z = 0;
+    private double security;
     public Color color;
     public static final int minRange = 500, maxRange = 3000;
     private int[] location = new int[3];
@@ -36,6 +37,7 @@ public class Star {
                 generateNewLocation(starAlreadyGenerated);
             inBounds = true;
         }
+        security = Math.random() * 1;
         //end location generation!
         color = (Color)Calculation.Selector(new Object[] {Color.getHSBColor(50,65,55),Color.getHSBColor(12,79,53),Color.getHSBColor(173,85,68),Color.getHSBColor(173,14,91),Color.getHSBColor(30,50,60)});
         if(Math.random()<.05) spaceStations.add(new SpaceStation(this));
@@ -139,5 +141,9 @@ public class Star {
     }
     public int[] getLocation() {
         return location;
+    }
+
+    public double getSecurity() {
+        return security;
     }
 }
