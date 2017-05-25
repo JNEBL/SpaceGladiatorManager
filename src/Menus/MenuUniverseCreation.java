@@ -29,7 +29,7 @@ public class MenuUniverseCreation extends Menu {
         for (int scan = 1; scan < buttons.size(); scan++) {
             if(buttons.get(scan).clicked) {
                 if (scan == 1) {
-                    Unigen.universe = new Universe(stars);
+                    Unigen.universe = new Universe(stars,"spiral");
                     System.out.println(Unigen.universe.getNumberOfStars()+" stars");
                     System.out.println(Unigen.universe.getNumberOfHyperSpaceLanes()+" hyperspace lanes");
                     System.out.println(Unigen.universe.xDimension+ " for x dimension");
@@ -53,7 +53,7 @@ public class MenuUniverseCreation extends Menu {
                     if(Unigen.universe != null){
                         Window.setMenu(new MenuUniverseDisplay(this));
                     }
-                    else System.out.println("oh no");
+                    else System.out.println("universe cannot display without generation!");
                     break;
                 }
             }

@@ -16,10 +16,12 @@ public class Universe {
     private ArrayList<WormHole> wormHoles = new ArrayList<>();
     private int xEnd = 0, yEnd = 0,zEnd = 0, xStart = 0, yStart = 0, zStart = 0;
     public int xDimension, yDimension, zDimension;
-    public Universe(int numStars){
+
+    public Universe(int numStars,String templateName){
         System.out.println("started Universe generation at: "+new Date());
         Unigen.universe = this;
-        addStars(numStars);
+        stars.addAll(UniverseTypeDatabase.getTemplate(templateName,numStars));
+        addStars(numStars-UniverseTypeDatabase.getTemplate(templateName,numStars).size());
         setGalacticHyperSpaceLanes();
         findUniverseBounds();
         checkGalaxy(numStars);

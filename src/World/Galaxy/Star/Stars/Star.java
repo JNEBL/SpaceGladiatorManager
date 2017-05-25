@@ -46,6 +46,19 @@ public class Star {
         }
         //end planet generation!
     }
+    public Star(int x, int y, int z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+
+        color = (Color) Calculation.Selector(new Object[]{Color.getHSBColor(50, 65, 55), Color.getHSBColor(12, 79, 53), Color.getHSBColor(173, 85, 68), Color.getHSBColor(173, 14, 91), Color.getHSBColor(30, 50, 60)});
+        if (Math.random() < .05) spaceStations.add(new SpaceStation(this));
+        //start planet generation!
+        int planets = (int) (Math.random() * 11);
+        for (int scan = 0; scan < planets; scan++) {
+            this.planets.add(new Planet(this));
+        }
+    }
 
     public boolean hasWormHole(){
         for(int scan = 0; scan < spaceStations.size(); scan++){
