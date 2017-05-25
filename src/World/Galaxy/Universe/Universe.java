@@ -21,11 +21,12 @@ public class Universe {
         System.out.println("started Universe generation at: "+new Date());
         Unigen.universe = this;
         stars.addAll(UniverseTypeDatabase.getTemplate(templateName,numStars));
-        addStars(numStars-UniverseTypeDatabase.getTemplate(templateName,numStars).size());
+        addStars(numStars-stars.size());
         setGalacticHyperSpaceLanes();
         findUniverseBounds();
-        checkGalaxy(numStars);
+//        checkGalaxy(numStars);
         System.out.println("ended Universe generation at: "+new Date());
+
 
     }
 

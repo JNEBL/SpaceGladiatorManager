@@ -23,17 +23,28 @@ public class UniverseTypeDatabase {
         ArrayList<Star> stars = new ArrayList<>();
         stars.add(new Star(0,0,0));
         int quadrantSize = numStars*2; //half of the map should be as long as twice the number of stars
-        for(int quadrant = 1; quadrant <= 4; quadrant++){
-            int xMult = 1, yMult = 1;
-            if(quadrant == 2 || quadrant == 3 )xMult = -1;
-            if(quadrant == 3 || quadrant == 4 )yMult = -1;
-            stars.add(new Star(quadrantSize*xMult,quadrantSize/2*yMult,0));
-            stars.add(new Star(quadrantSize/2*xMult,quadrantSize*yMult,0));
-            stars.add(new Star(quadrantSize/5*xMult,quadrantSize/2*yMult,0));
-            stars.add(new Star(quadrantSize/4*xMult,quadrantSize*3/4*yMult,0));
-            stars.add(new Star(quadrantSize/4*3*xMult,quadrantSize*3/4*yMult,0));
 
-        }
+            int xMult = 1, yMult = 1;
+            stars.add(new Star(quadrantSize/8*xMult,quadrantSize/8*yMult,0));
+                stars.add(new Star(quadrantSize * xMult, quadrantSize*7/8 * yMult, 0));
+                stars.add(new Star(quadrantSize / 2 * xMult, quadrantSize*3/4 * yMult, 0));
+                stars.add(new Star(quadrantSize / 5 * xMult, quadrantSize / 2 * yMult, 0));
+                stars.add(new Star(quadrantSize / 4 * xMult, quadrantSize * 3 / 4 * yMult, 0));
+                stars.add(new Star(quadrantSize / 4 * 3 * xMult, quadrantSize * 3 / 4 * yMult, 0));
+            xMult = -1;
+            yMult = -1;
+        stars.add(new Star(quadrantSize/8*xMult,quadrantSize/8*yMult,0));
+        stars.add(new Star(quadrantSize * xMult, quadrantSize*7/8 * yMult, 0));
+            stars.add(new Star(quadrantSize / 2 * xMult, quadrantSize*3/4  * yMult, 0));
+            stars.add(new Star(quadrantSize / 5 * xMult, quadrantSize / 2 * yMult, 0));
+            stars.add(new Star(quadrantSize / 4 * xMult, quadrantSize * 3 / 4 * yMult, 0));
+            stars.add(new Star(quadrantSize / 4 * 3 * xMult, quadrantSize * 3 / 4 * yMult, 0));
+            int initialStarSize = stars.size();
+            for(int scan = 0; scan < initialStarSize-1; scan++){
+                Star temp = stars.get(scan);
+                stars.add(new Star(temp.getY()*-1,temp.getX(),0));
+            }
+
         return stars;
 
     }
