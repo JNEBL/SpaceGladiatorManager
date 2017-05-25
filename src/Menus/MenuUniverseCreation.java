@@ -2,6 +2,7 @@ package Menus;
 
 import Calculations.Unigen;
 import GameFrameWork.Buttons.Button;
+import GameFrameWork.Buttons.ButtonDropDown;
 import GameFrameWork.Buttons.ButtonNudge;
 import GameFrameWork.Buttons.ButtonToggle;
 import GameFrameWork.Window;
@@ -17,7 +18,8 @@ public class MenuUniverseCreation extends Menu {
         buttons.add(new Button(60,600,100,40,"Create Universe"));
         buttons.add(new ButtonNudge(60,200,100,40,"stars",100,50000,stars,100));
         buttons.add(new Button(60,280,100,40,"View Universe"));
-        buttons.add(new ButtonToggle(60,240,100,40,"spiral",false));
+        buttons.add(new ButtonDropDown(60,240,100,40,"universe type",new String[] {"central mass","spiral"}));
+
         //universe size
         //universe age?
         //difficulty
@@ -31,10 +33,8 @@ public class MenuUniverseCreation extends Menu {
         for (int scan = 1; scan < buttons.size(); scan++) {
             if(buttons.get(scan).clicked) {
                 if (scan == 1) {
-                    ButtonToggle toggle = (ButtonToggle) buttons.get(4);
-                    if(toggle.state)
-                    Unigen.universe = new Universe(stars,"spiral");
-                    else Unigen.universe = new Universe(stars,"central mass");
+                    ButtonDropDown dropDown = (ButtonDropDown) buttons.get(4);
+                    Unigen.universe = new Universe(stars,dropDown.buttonSelected);
                     System.out.println(Unigen.universe.getNumberOfStars()+" stars");
                     System.out.println(Unigen.universe.getNumberOfHyperSpaceLanes()+" hyperspace lanes");
                     System.out.println(Unigen.universe.xDimension+ " for x dimension");
@@ -59,6 +59,10 @@ public class MenuUniverseCreation extends Menu {
                         Window.setMenu(new MenuUniverseDisplay(this));
                     }
                     else System.out.println("universe cannot display without generation!");
+                    break;
+                }
+                if (scan == 2) {
+                    displayAll();
                     break;
                 }
             }
