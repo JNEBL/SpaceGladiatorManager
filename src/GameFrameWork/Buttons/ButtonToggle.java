@@ -6,7 +6,7 @@ import java.awt.*;
  * Created by citim on 5/16/2017.
  */
 public class ButtonToggle extends Button {
-    boolean state;
+    public boolean state;
 
     public ButtonToggle(int x, int y, int xDimesion, int yDimension, String name, boolean state){
         super(x,y,xDimesion,yDimension,name);

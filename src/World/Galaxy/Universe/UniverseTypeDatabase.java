@@ -11,6 +11,8 @@ public class UniverseTypeDatabase {
     public static ArrayList<Star> getTemplate(String templateName, int numStars){
 
         if(templateName.equals("spiral")) return spiral(numStars);
+        if(templateName.equals("central mass")) return centralMass();
+
         return centralMass();
     }
 

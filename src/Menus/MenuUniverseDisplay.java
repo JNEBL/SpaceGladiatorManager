@@ -7,6 +7,8 @@ import GameFrameWork.PanelTextBox;
 import GameFrameWork.PanelUniverseDisplay;
 import GameFrameWork.Window;
 
+import java.util.ArrayList;
+
 /**
  * Created by citim on 5/22/2017.
  */
@@ -25,6 +27,7 @@ public class MenuUniverseDisplay extends Menu{
         for (int scan = 1; scan < buttons.size(); scan++) {
         if(buttons.get(scan).clicked) {
             if (scan == 1) {
+                panels = new ArrayList<>();
                 Window.setMenu(previousMenu);
                 break;
             }

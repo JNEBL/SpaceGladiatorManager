@@ -28,8 +28,9 @@ public abstract class Panel {
 
     public void display(){
         displayFrame();
-        displayButtons();
         displayComponent();
+        displayButtons();
+
     }
     private void displayFrame(){
         Graphics g = GameFrameWork.Window.window.getGraphics();
