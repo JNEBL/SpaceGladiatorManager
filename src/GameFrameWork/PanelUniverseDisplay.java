@@ -22,18 +22,23 @@ public class PanelUniverseDisplay extends Panel {
             if (buttons.get(scan).clicked) {
                 if (scan == 1) {
                     side = "front";
+                    display();
+
                     break;
                 }
                 if (scan == 2) {
                     side = "side";
+                    display();
+
                     break;
                 }if (scan == 3) {
                     side = "top";
+                    display();
+
                     break;
                 }
             }
         }
-        display();
     }
     public void displayComponent(){
         Graphics g = Window.window.getGraphics();
