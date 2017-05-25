@@ -37,7 +37,7 @@ public class Star {
             inBounds = true;
         }
         //end location generation!
-        color = (Color)Calculation.Selector(new Object[] {Color.yellow,Color.red,Color.blue,Color.white,Color.orange});
+        color = (Color)Calculation.Selector(new Object[] {Color.getHSBColor(50,65,55),Color.getHSBColor(12,79,53),Color.getHSBColor(173,85,68),Color.getHSBColor(173,14,91),Color.getHSBColor(30,50,60)});
         if(Math.random()<.05) spaceStations.add(new SpaceStation(this));
         //start planet generation!
         int planets = (int)(Math.random()*11);
@@ -47,6 +47,12 @@ public class Star {
         //end planet generation!
     }
 
+    public boolean hasWormHole(){
+        for(int scan = 0; scan < spaceStations.size(); scan++){
+            if(spaceStations.get(scan).wormHole != null) return true;
+        }
+        return false;
+    }
     private void generateNewLocation(ArrayList<Star> starAlreadyGenerated){
 //        System.out.println("new location needed for "+x+" , "+y+" , "+z);
 //        System.out.println("stars present = "+ starAlreadyGenerated.size());

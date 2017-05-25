@@ -2,6 +2,7 @@ package World.Galaxy.Star.SpacePort;
 
 import Calculations.Unigen;
 import World.Galaxy.Star.Stars.Star;
+import World.Galaxy.Travel.WormHole;
 import World.Tournament.Arena;
 
 /**
@@ -12,10 +13,11 @@ public class SpaceStation {
     private int distanceFromStar;
     private boolean hasArena;
     private Arena arena;
+    public WormHole wormHole;
     public SpaceStation(Star star){
         this.star = star;
         distanceFromStar = (int) (Math.random() * 900000 + 100000);
-        if (Math.random() < .1){
+        if (Math.random() < .7){
             this.hasArena = true;
             this.arena = new Arena();
         }
@@ -25,6 +27,7 @@ public class SpaceStation {
         }
         if (Math.random() < .25){
             Unigen.universe.addWormhole(this);
+
         }
     }
 

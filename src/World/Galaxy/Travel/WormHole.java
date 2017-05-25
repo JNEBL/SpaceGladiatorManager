@@ -12,6 +12,7 @@ public class WormHole {
     private SpaceStation spaceStation;
     public WormHole(SpaceStation spaceStation){
         this.spaceStation = spaceStation;
+        spaceStation.wormHole = this;
     }
 
     public SpaceStation getWormHoleLocation() {

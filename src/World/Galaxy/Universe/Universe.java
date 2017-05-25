@@ -8,6 +8,7 @@ import World.Galaxy.Travel.HyperSpaceLanes;
 import World.Galaxy.Travel.WormHole;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Universe {
     private ArrayList<Star> stars = new ArrayList<>();
@@ -16,11 +17,14 @@ public class Universe {
     private int xEnd = 0, yEnd = 0,zEnd = 0, xStart = 0, yStart = 0, zStart = 0;
     public int xDimension, yDimension, zDimension;
     public Universe(int numStars){
+        System.out.println("started Universe generation at: "+new Date());
         Unigen.universe = this;
         addStars(numStars);
         setGalacticHyperSpaceLanes();
         findUniverseBounds();
         checkGalaxy(numStars);
+        System.out.println("ended Universe generation at: "+new Date());
+
     }
 
     private void setGalacticHyperSpaceLanes() {
