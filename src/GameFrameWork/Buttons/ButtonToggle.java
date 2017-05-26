@@ -2,14 +2,11 @@ package GameFrameWork.Buttons;
 
 import java.awt.*;
 
-/**
- * Created by citim on 5/16/2017.
- */
 public class ButtonToggle extends Button {
     public boolean state;
 
-    public ButtonToggle(int x, int y, int xDimesion, int yDimension, String name, boolean state){
-        super(x,y,xDimesion,yDimension,name);
+    public ButtonToggle(int x, int y, int xDimension, int yDimension, String name, boolean state){
+        super(x,y,xDimension,yDimension,name);
         this.state = state;
     }
     public void questionClicked() {

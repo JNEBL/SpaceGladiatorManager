@@ -30,25 +30,25 @@ public class ButtonDropDown extends Button {
                 (Window.yClick > y &&
                         Window.yClick < y+yDimension)) {
             if(!open)
-            displayDrop();
+                displayDrop();
             else
                 voidDrop();
             clicked = true;
         }
         else if(open){
-            for(int scan = 0; scan < buttonNames.length; scan++){
+            for(int scan = 0; scan < subButtons.size(); scan++){
                 subButtons.get(scan).questionClicked();
                 if(subButtons.get(scan).clicked){
                     buttonSelected = buttonNames[scan];
-                    break;
+                    voidDrop();
+
                 }
-                voidDrop();
             }
         }
     }
     private void displayDrop(){
         for(int scan = 0; scan < this.buttonNames.length; scan++) {
-            subButtons.add(new Button(x+xDimesion,   y+((scan+1)*(yDimension + 2)-yDimension), xDimesion, yDimension, buttonNames[scan]));
+            subButtons.add(new Button(x+xDimesion,   y+yDimension*scan, xDimesion, yDimension, buttonNames[scan]));
             //make window display this
         }
         for(int scan = 0; scan < this.buttonNames.length; scan++){
