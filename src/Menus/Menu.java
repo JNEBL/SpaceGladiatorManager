@@ -22,7 +22,6 @@ public abstract class Menu {
         Window.window.paint(Window.window.getGraphics());
         Window.window.getGraphics().setColor(Color.black);
         Window.window.getGraphics().fillRect(0,0,1280,720);
-        System.out.println("the number of panels is: "+panels.size());
         displayButtons();
         displayPanels();
     }

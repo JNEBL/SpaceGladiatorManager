@@ -1,6 +1,7 @@
 package Menus;
 
 import GameFrameWork.Buttons.Button;
+import GameFrameWork.Buttons.ButtonMultiToggle;
 import GameFrameWork.Window;
 
 /**
@@ -11,6 +12,7 @@ public class MenuGameCreation extends Menu {
     public MenuGameCreation(){
         buttons.add(new Button(60,200,100,40,"Create Universe"));
         buttons.add(new Button(60,600,100,40,"Back"));
+        buttons.add(new ButtonMultiToggle(60,240,40,40,"multiToggle",new String[] {"","",""}));
     }
     public void questionPressed(){
         for (int scan = 1; scan < buttons.size(); scan++) {

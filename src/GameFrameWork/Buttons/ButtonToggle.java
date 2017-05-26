@@ -35,4 +35,8 @@ public class ButtonToggle extends Button {
         g.setColor(Color.black);
         g.drawString(name,x+5,y+yDimension/2);
     }
+    public void toggle(){
+        state = !state;
+        displayButton();
+    }
 }
