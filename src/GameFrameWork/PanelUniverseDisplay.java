@@ -2,12 +2,16 @@ package GameFrameWork;
 
 import Calculations.Unigen;
 import GameFrameWork.Buttons.Button;
+import World.Galaxy.Star.Stars.Star;
+import World.Galaxy.Universe.Universe;
 
 import java.awt.*;
 
 public class PanelUniverseDisplay extends Panel {
     private String side = "front";
     private double megamileToPixelRatio;
+    public int xCameraPosition = 0, yCameraPosition = 0, zCameraPosition = 0;
+    public double zoomPercent = 100;
     public PanelUniverseDisplay(int x, int y, int xDimension, int yDimension,Menus.Menu menu, double megamileToPixelRatio){
         super(x,y,xDimension,yDimension,menu);
         buttons.add(new Button(x,y+yDimension-yDimension/8,xDimension/3,yDimension/8,"front"));
@@ -42,6 +46,10 @@ public class PanelUniverseDisplay extends Panel {
     }
     private boolean inBounds(int x, int y){
         return x >= this.x && x <= xDimension && y >= this.y && y <= yDimension;
+    }
+    private boolean inView(Star star){
+        int distanceViewed = (int)(Unigen.universe.getLargestDimension()*zoomPercent/2); //is the radius of the sphere of your view
+        return (Math.abs(star.getX()-xCameraPosition) <= distanceViewed && Math.abs(star.getY()-yCameraPosition) <= distanceViewed && Math.abs(star.getZ()-zCameraPosition) <= distanceViewed);
     }
     public void displayComponent(){
         Graphics g = Window.window.getGraphics();
