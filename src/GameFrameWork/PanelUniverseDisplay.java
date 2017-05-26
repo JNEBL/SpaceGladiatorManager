@@ -2,6 +2,7 @@ package GameFrameWork;
 
 import Calculations.Unigen;
 import GameFrameWork.Buttons.Button;
+import GameFrameWork.Buttons.ButtonMultiToggle;
 
 import java.awt.*;
 
@@ -39,6 +40,9 @@ public class PanelUniverseDisplay extends Panel {
                 }
             }
         }
+    }
+    private boolean inBounds(int x, int y){
+        return x >= this.x && x <= xDimension && y >= this.y && y <= yDimension;
     }
     public void displayComponent(){
         Graphics g = Window.window.getGraphics();
