@@ -4,6 +4,7 @@ import Calculations.Calculation;
 import Calculations.Unigen;
 import GameFrameWork.Buttons.Button;
 import GameFrameWork.Buttons.ButtonNudge;
+import GameFrameWork.Buttons.ButtonNudgeDouble;
 import World.Galaxy.Star.Stars.Star;
 import World.Galaxy.Universe.Universe;
 
@@ -22,7 +23,7 @@ public class PanelUniverseDisplay extends Panel {
                 yDimension/8,"side"));
         buttons.add(new Button(x+2*(xDimension/3),y+yDimension-yDimension/8,
                 xDimension/3,yDimension/8,"top"));
-        buttons.add(new ButtonNudge(x,y+yDimension-yDimension/8-yDimension/8,xDimension/4,yDimension/8,"zoom percent ",0,500,50,5));
+        buttons.add(new ButtonNudgeDouble(x,y+yDimension-yDimension/8-yDimension/8,xDimension/4,yDimension/8,"zoom percent ",0,500,50,5,25));
         this.megamileToPixelRatio = megamileToPixelRatio*2;
     }
     public void questionPressed() { //this is a template. an if scan== x is needed per button
@@ -48,7 +49,7 @@ public class PanelUniverseDisplay extends Panel {
                 if (scan == 4) {
                     ButtonNudge nudge = (ButtonNudge) buttons.get(4);
                     zoomPercent = nudge.getCurrent();
-
+                    display();
                     break;
                 }
 

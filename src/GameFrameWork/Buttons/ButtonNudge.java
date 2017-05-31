@@ -1,10 +1,10 @@
 package GameFrameWork.Buttons;
 
 public class ButtonNudge extends Button {
-    private int min, max, nudgeBy;
-    private Button left, right;
-    private String name;
-    private Integer current;
+    protected int min, max, nudgeBy;
+    protected Button left, right;
+    protected String name;
+    protected Integer current;
     public ButtonNudge(int x, int y, int xDimension, int yDimension, String name, int min, int max, int current,int nudgeBy){
         super(x+25,y,xDimension,yDimension,name+" : "+current);
         this.name = name;
