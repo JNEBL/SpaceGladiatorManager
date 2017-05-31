@@ -66,12 +66,22 @@ public class PanelUniverseDisplay extends Panel {
         ArrayList<Star> viewableStars = new ArrayList<>();
         for(int scan = 0; scan <  Unigen.universe.getStars().size(); scan++){
             Star current = Unigen.universe.getStars().get(scan);
-            if(inView(current)&&inBounds((int)(Unigen.universe.getStars().get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(Unigen.universe.getStars().get(scan).getY()
-                    /megamileToPixelRatio+yDimension/3*2)))
+            if(inView(current))
                 viewableStars.add(current);
         }
+        megamileToPixelRatio = Unigen.universe.xDimension/Window.window.y;
+        if(Unigen.universe.yDimension/Window.window.y < megamileToPixelRatio)megamileToPixelRatio = Unigen.universe.xDimension/Window.window.y;
+        if(Unigen.universe.zDimension/Window.window.y < megamileToPixelRatio)megamileToPixelRatio = Unigen.universe.zDimension/Window.window.y;
+
+
         Graphics g = Window.window.getGraphics();
         if(side.equals("front")){
+            for(int scan = 0; scan < viewableStars.size(); scan++){
+                if(!inBounds((int)(viewableStars.get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(viewableStars.get(scan).getY() /megamileToPixelRatio+yDimension/3*2))) {
+                    viewableStars.remove(scan);
+                    scan--;
+                }
+            }
             for(int scan = 0; viewableStars.size() > scan; scan++){
                     g.setColor(viewableStars.get(scan).color);
                     if (viewableStars.get(scan).getSpaceStation().size() != 0)
@@ -89,6 +99,12 @@ public class PanelUniverseDisplay extends Panel {
             }
         }
         if(side.equals("side")){
+            for(int scan = 0; scan < viewableStars.size(); scan++){
+                if(!inBounds((int)(viewableStars.get(scan).getZ()/megamileToPixelRatio+xDimension/2),(int)(viewableStars.get(scan).getY() /megamileToPixelRatio+yDimension/3*2))) {
+                    viewableStars.remove(scan);
+                    scan--;
+                }
+            }
             for(int scan = 0; viewableStars.size() > scan; scan++) {
 
                     g.setColor(viewableStars.get(scan).color);
@@ -107,6 +123,12 @@ public class PanelUniverseDisplay extends Panel {
             }
 
         if(side.equals("top")){
+            for(int scan = 0; scan < viewableStars.size(); scan++){
+                if(!inBounds((int)(viewableStars.get(scan).getX()/megamileToPixelRatio+xDimension/2),(int)(viewableStars.get(scan).getZ() /megamileToPixelRatio+yDimension/3*2))) {
+                    viewableStars.remove(scan);
+                    scan--;
+                }
+            }
             for(int scan = 0; viewableStars.size() > scan; scan++) {
 
                     g.setColor(viewableStars.get(scan).color);
