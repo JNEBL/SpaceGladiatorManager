@@ -54,6 +54,11 @@ public class Calculation {
                 (Math.pow(starStart.getY() - starSecond.getY(),2)) +
                 (Math.pow(starStart.getZ() - starSecond.getZ(),2))));
     }
+    public static double starDistance(int x, int y, int z, Star star){
+        return Math.sqrt(Math.abs((Math.pow(x - star.getX(),2)) +
+                (Math.pow(y - star.getY(),2)) +
+                (Math.pow(z - star.getZ(),2))));
+    }
     public static Object Selector(Object[] objects){
         return objects[(int)(Math.random()*objects.length)];
     }
