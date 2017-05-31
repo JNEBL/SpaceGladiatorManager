@@ -22,7 +22,7 @@ public class PanelUniverseDisplay extends Panel {
                 yDimension/8,"side"));
         buttons.add(new Button(x+2*(xDimension/3),y+yDimension-yDimension/8,
                 xDimension/3,yDimension/8,"top"));
-        buttons.add(new ButtonNudge(x,y+yDimension-yDimension/8-yDimension/8,xDimension/4,yDimension/8,"zoom percent ",0,100,50,1));
+        buttons.add(new ButtonNudge(x,y+yDimension-yDimension/8-yDimension/8,xDimension/4,yDimension/8,"zoom percent ",0,500,50,5));
         this.megamileToPixelRatio = megamileToPixelRatio*2;
     }
     public void questionPressed() { //this is a template. an if scan== x is needed per button
@@ -69,9 +69,10 @@ public class PanelUniverseDisplay extends Panel {
             if(inView(current))
                 viewableStars.add(current);
         }
-        megamileToPixelRatio = Unigen.universe.xDimension/Window.window.y;
-        if(Unigen.universe.yDimension/Window.window.y < megamileToPixelRatio)megamileToPixelRatio = Unigen.universe.xDimension/Window.window.y;
-        if(Unigen.universe.zDimension/Window.window.y < megamileToPixelRatio)megamileToPixelRatio = Unigen.universe.zDimension/Window.window.y;
+        int[] dimensions = Calculation.findDimensions(viewableStars);
+        megamileToPixelRatio = dimensions[0]/Window.window.y;
+        if(dimensions[1]/Window.window.y < megamileToPixelRatio)megamileToPixelRatio = dimensions[0]/Window.window.y;
+        if(dimensions[2]/Window.window.y < megamileToPixelRatio)megamileToPixelRatio = dimensions[2]/Window.window.y;
 
 
         Graphics g = Window.window.getGraphics();

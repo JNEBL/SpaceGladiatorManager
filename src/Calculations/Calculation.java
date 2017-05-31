@@ -59,6 +59,21 @@ public class Calculation {
                 (Math.pow(y - star.getY(),2)) +
                 (Math.pow(z - star.getZ(),2))));
     }
+    public static int[] findDimensions(ArrayList<Star> stars){//x,y,and z respectively.
+        int xStart = 0, yStart = 0, zStart = 0, xEnd = 0, yEnd = 0, zEnd = 0, xDimension = 0, yDimension = 0, zDimension = 0;
+        for(int scan = 0; scan < stars.size(); scan++){
+            if (stars.get(scan).getX() < xStart)xStart = stars.get(scan).getX();
+            if (stars.get(scan).getY() < yStart)yStart = stars.get(scan).getY();
+            if (stars.get(scan).getZ() < zStart)zStart = stars.get(scan).getZ();
+            if (stars.get(scan).getX() > xEnd)xEnd = stars.get(scan).getX();
+            if (stars.get(scan).getY() > yEnd)yEnd = stars.get(scan).getY();
+            if (stars.get(scan).getZ() > zEnd)zEnd = stars.get(scan).getZ();
+        }
+        xDimension = xStart*(-1)+xEnd;
+        yDimension = yStart*(-1)+yEnd;
+        zDimension = zStart*(-1)+zEnd;
+        return new int[] {xDimension,yDimension,zDimension};
+    }
     public static Object Selector(Object[] objects){
         return objects[(int)(Math.random()*objects.length)];
     }

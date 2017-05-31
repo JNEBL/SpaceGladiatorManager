@@ -30,13 +30,6 @@ public class Universe {
 
     }
 
-    public int getLargestDimension(){
-        if(xDimension >= yDimension && xDimension >= zDimension)return xDimension;
-        if(yDimension >= xDimension && yDimension >= zDimension)return yDimension;
-        if(zDimension >= yDimension && zDimension >= xDimension)return zDimension;
-        System.out.println("error: largest dimension not found");
-        return 0;
-    }
     private void setGalacticHyperSpaceLanes() {
         if (stars.size() > 1)
             for (int x = 0; x < stars.size(); x++) {//origin
