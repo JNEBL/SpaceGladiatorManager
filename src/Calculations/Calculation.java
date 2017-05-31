@@ -77,4 +77,5 @@ public class Calculation {
     public static Object Selector(Object[] objects){
         return objects[(int)(Math.random()*objects.length)];
     }
+
 }

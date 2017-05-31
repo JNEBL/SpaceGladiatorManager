@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Planet {
     private int megaMileRadius;
     private ArrayList<Moon> moons = new ArrayList<>();
-    private int distanceFromStar;
+    private int distanceFromStar, averageTemparature;
     private Arena arena;
     public Planet(Star star){
         megaMileRadius = (int)(Math.random()*40)+1;
@@ -38,6 +38,7 @@ public class Planet {
 
         for (int x = 0;x < Math.random() * megaMileRadius/3;x++){
             moons.add(new Moon(this));
+            setTemparature();
         }
     }
 
@@ -55,5 +56,9 @@ public class Planet {
 
     public ArrayList<Moon> getMoons() {
         return moons;
+    }
+
+    public void setTemparature(){
+        averageTemparature = (int)((Math.random()*30-15)+distanceFromStar*(double)(100/130));
     }
 }
